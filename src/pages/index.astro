@@ -1,13 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
+import Badget from '../components/Badget.astro';
+import LinkedInIcon from '../icons/LinkedIn.astro';
+import SocialBadget from '../components/SocialBadget.astro';
+import GitHubIcon from '../icons/GitHub.astro';
+import MailIcon from '../icons/Mail.astro';
+import DownloadIcon from '../icons/Download.astro';
 
 const links = {
   linkedIn: 'https://www.linkedin.com/in/jdoo15/',
+  gitHub: 'https://github.com/JuanDa15/',
+  mail: 'mailto:jdoo1115@gmail.com',
+};
+
+const calculateExperience = () => {
+  const initialDate = new Date('01-01-2022');
+  const today = new Date();
+
+  const yearsDiff = today.getFullYear() - initialDate.getFullYear();
+  const monthsDiff = today.getMonth() - initialDate.getMonth();
+
+  return Math.ceil(Number(`${yearsDiff}.${monthsDiff}`));
 };
 ---
 
-<Layout title='Welcome to Astro.'>
+<Layout title='Portfolio Juan David - Web Developer' description='...'>
   <main>
     <section class='w-full lg:w-[740px] mx-auto py-44'>
       <h1 class='text-5xl font-bold flex items-center gap-x-4 mb-10'>
@@ -15,14 +32,33 @@ const links = {
           class='flex align-center'
           href={links.linkedIn}
           target='_blank'
-          referrerpolicy='no-referrer'><Badge>Available for hire</Badge></a
+          referrerpolicy='no-referrer'><Badget>Available for hire</Badget></a
         >
       </h1>
-      <p class='text-xl opacity-70'>
-        Front end developer based in Pereira, Colombia. Specialized in creating
-        applications in diferent Frontend frameworks.
+      <p class='text-2xl opacity-70 text-wrap'>
+        <b class='text-electric-purple/70'>
+          + {calculateExperience()} years experience.
+        </b>
+        <span class='opacity-60'>
+          Front end developer based in Pereira, Colombia.
+        </span>
+        Specialized in creating applications in diferent Frontend frameworks.
       </p>
-      <ul></ul>
+      <nav class='flex flex-row gap-x-4 items-center mt-6'>
+        <SocialBadget href={links.linkedIn}>
+          <LinkedInIcon class='w-5 h-5' /> LinkedIn
+        </SocialBadget>
+        <SocialBadget href={links.gitHub}>
+          <GitHubIcon class='w-5 h-5' /> GitHub
+        </SocialBadget>
+        <SocialBadget href={links.mail}>
+          <MailIcon class='w-5 h-5' />
+          <span>jdoo1115@gmail.com</span>
+        </SocialBadget>
+        <SocialBadget>
+          <DownloadIcon class='w-5 h-5' /> CV
+        </SocialBadget>
+      </nav>
     </section>
   </main>
 </Layout>
