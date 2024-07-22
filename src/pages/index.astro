@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+
+const links = {
+  linkedIn: 'https://www.linkedin.com/in/jdoo15/',
+};
+---
+
+<Layout title='Welcome to Astro.'>
+  <main>
+    <section class='w-full lg:w-[740px] mx-auto py-44'>
+      <h1 class='text-5xl font-bold flex items-center gap-x-4 mb-10'>
+        Hey, I'm Juan David <a
+          class='flex align-center'
+          href={links.linkedIn}
+          target='_blank'
+          referrerpolicy='no-referrer'><Badge>Available for hire</Badge></a
+        >
+      </h1>
+      <p class='text-xl opacity-70'>
+        Front end developer based in Pereira, Colombia. Specialized in creating
+        applications in diferent Frontend frameworks.
+      </p>
+      <ul></ul>
+    </section>
+  </main>
+</Layout>

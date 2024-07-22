@@ -1,0 +1,28 @@
+---
+const links = [
+  {
+    link: '/',
+    text: 'Home',
+  },
+  {
+    link: '/about',
+    text: 'About',
+  },
+  {
+    link: '/projects',
+    text: 'Projects',
+  },
+  {
+    link: '/contact',
+    text: 'Contact',
+  },
+];
+---
+
+<header class='flex justify-between items-center py-5 w-[1120px]'>
+  <img src='/img.jpg' alt='juan_david_pic' class='rounded-full w-12 h-12' />
+
+  <nav class='flex flex-row gap-10 opacity-80'>
+    {links.map((link) => <a href={link.link}>{link.text}</a>)}
+  </nav>
+</header>

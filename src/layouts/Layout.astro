@@ -1,0 +1,67 @@
+---
+import Header from '../components/Header.astro';
+import '@fontsource-variable/onest';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='Astro description' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <!-- <div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div> -->
+    <Header />
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --primary-neon-blue: #1e90ff;
+    --primary-sky-blue: #87ceeb;
+
+    --secondary-dodger-blue: #1e90ff;
+    --secondary-cyan: #00ffff;
+
+    --accent-deep-sky-blue: #00bfff;
+    --accent-light-blue: #add8e6;
+
+    --primary-electric-purple: #9b30ff;
+    --primary-lavender: #e6e6fa;
+
+    --secondary-deep-purple: #6a0dad;
+    --secondary-purple: #800080;
+
+    --accent-bright-magenta: #ff00ff;
+    --accent-orchid: #da70d6;
+  }
+
+  html {
+    font-family:
+      'Onest Variable',
+      system-ui,
+      -apple-system,
+      sans-serif;
+    color-scheme: light dark;
+  }
+
+  body {
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+  }
+</style>
