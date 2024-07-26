@@ -1,0 +1,33 @@
+---
+import ExperienceItem from './ExperienceItem.astro';
+
+const EXPERIENCE = [
+  {
+    title: 'Frontend Developer',
+    company: 'Google',
+    description:
+      'Developed and maintained user interfaces for a variety of web applications using React and Tailwind CSS. Collaborated with the design team to ensure seamless user experiences.',
+    link: 'https://company1.com',
+    date: 'January 2020 - June 2021',
+  },
+  {
+    title: 'Backend Developer',
+    company: 'Google',
+    description:
+      'Designed and implemented server-side logic using Node.js and Express. Managed database operations and optimized performance for high-traffic applications.',
+    date: 'July 2021 - Present',
+  },
+  {
+    title: 'Full Stack Engineer',
+    company: 'Google',
+    description:
+      'Led the development of full-stack solutions for e-commerce platforms. Utilized a combination of React, Node.js, and MongoDB to create scalable and robust applications.',
+    link: 'https://company3.com',
+    date: 'March 2018 - December 2019',
+  },
+];
+---
+
+<ol class='relative border-s border-gray-200 dark:border-gray-700 ml-2'>
+  {EXPERIENCE.map((experience) => <ExperienceItem {...experience} />)}
+</ol>

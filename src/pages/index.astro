@@ -6,6 +6,11 @@ import SocialBadget from '../components/SocialBadget.astro';
 import GitHubIcon from '../icons/GitHub.astro';
 import MailIcon from '../icons/Mail.astro';
 import DownloadIcon from '../icons/Download.astro';
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Briefcase from '../icons/Briefcase.astro';
+import Code from '../icons/Code.astro';
+import Projects from '../components/Projects.astro';
 
 const links = {
   linkedIn: 'https://www.linkedin.com/in/jdoo15/',
@@ -25,9 +30,11 @@ const calculateExperience = () => {
 ---
 
 <Layout title='Portfolio Juan David - Web Developer' description='...'>
-  <main>
-    <section class='w-full lg:w-[740px] mx-auto py-44'>
-      <h1 class='text-5xl font-bold flex items-center gap-x-4 mb-10'>
+  <main class='px-4'>
+    <SectionContainer class='pt-44 pb-20' id='top'>
+      <h1
+        class='text-3xl md:text-4xl lg:text-5xl font-bold flex items-center gap-x-4 mb-10'
+      >
         Hey, I'm Juan David <a
           class='flex align-center'
           href={links.linkedIn}
@@ -59,6 +66,18 @@ const calculateExperience = () => {
           <DownloadIcon class='w-5 h-5' /> CV
         </SocialBadget>
       </nav>
-    </section>
+    </SectionContainer>
+    <SectionContainer id='experience'>
+      <h2 class='text-4xl font-semibold mb-8 flex gap-x-4 items-center'>
+        <Briefcase class='w-6 h-6' /> Job experience
+      </h2>
+      <Experience />
+    </SectionContainer>
+    <SectionContainer id='projects'>
+      <h2 class='text-4xl font-semibold mb-8 flex gap-x-4 items-center'>
+        <Code class='w-6 h-6' /> Projects
+      </h2>
+      <Projects />
+    </SectionContainer>
   </main>
 </Layout>

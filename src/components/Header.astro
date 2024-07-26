@@ -1,25 +1,29 @@
 ---
 const links = [
   {
-    link: '/',
+    link: '#top',
     text: 'Home',
   },
   {
-    link: '/about',
+    link: '#experience',
+    text: 'Experience',
+  },
+  {
+    link: '#about',
     text: 'About',
   },
   {
-    link: '/projects',
+    link: '#projects',
     text: 'Projects',
   },
   {
-    link: '/contact',
+    link: '#contact',
     text: 'Contact',
   },
 ];
 ---
 
-<header class='flex justify-between items-center py-5 w-[1120px]'>
+<header class='flex justify-between items-center py-5 w-full xd:w-[1120px]'>
   <img src='/img.jpg' alt='juan_david_pic' class='rounded-full w-12 h-12' />
 
   <nav class='flex flex-row gap-10 opacity-80'>
