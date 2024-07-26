@@ -31,27 +31,55 @@ const calculateExperience = () => {
 
 <Layout title='Portfolio Juan David - Web Developer' description='...'>
   <main class='px-4'>
-    <SectionContainer class='pt-44 pb-20' id='top'>
+    <SectionContainer class='pt-24 md:pt-28 lg:pt-44 pb-20' id='top'>
+      <img
+        src='/img.jpg'
+        alt='juan_david_pic'
+        class={`
+          rounded-full 
+          size-14 xl:size-16
+          mb-4
+        `}
+      />
       <h1
-        class='text-3xl md:text-4xl lg:text-5xl font-bold flex items-center gap-x-4 mb-10'
+        class={`
+          text-2xl md:text-4xl lg:text-5xl font-bold 
+          flex items-center gap-x-4 md:gap-x-6 
+          mb-8 md:mb-10
+        `}
       >
-        Hey, I'm Juan David <a
+        Hey, I'm Juan David
+        <a
           class='flex align-center'
           href={links.linkedIn}
           target='_blank'
-          referrerpolicy='no-referrer'><Badget>Available for hire</Badget></a
+          referrerpolicy='no-referrer'
         >
+          <Badget>Available for hire</Badget>
+        </a>
       </h1>
-      <p class='text-2xl opacity-70 text-wrap'>
-        <b class='text-electric-purple/70'>
+      <p
+        class={`
+          text-xl lg:text-2xl 
+          opacity-70 
+          text-balance
+        `}
+      >
+        <b class='text-electric-purple/90'>
           + {calculateExperience()} years experience.
         </b>
-        <span class='opacity-60'>
+        <span class='opacity-40'>
           Front end developer based in Pereira, Colombia.
         </span>
         Specialized in creating applications in diferent Frontend frameworks.
       </p>
-      <nav class='flex flex-row gap-x-4 items-center mt-6'>
+
+      <nav
+        class={`
+          flex flex-row gap-x-4 gap-y-3 items-center flex-wrap
+          mt-8 lg:mt-12 
+        `}
+      >
         <SocialBadget href={links.linkedIn}>
           <LinkedInIcon class='w-5 h-5' /> LinkedIn
         </SocialBadget>
@@ -67,7 +95,7 @@ const calculateExperience = () => {
         </SocialBadget>
       </nav>
     </SectionContainer>
-    <SectionContainer id='experience'>
+    <!-- <SectionContainer id='experience'>
       <h2 class='text-4xl font-semibold mb-8 flex gap-x-4 items-center'>
         <Briefcase class='w-6 h-6' /> Job experience
       </h2>
@@ -78,6 +106,6 @@ const calculateExperience = () => {
         <Code class='w-6 h-6' /> Projects
       </h2>
       <Projects />
-    </SectionContainer>
+    </SectionContainer> -->
   </main>
 </Layout>

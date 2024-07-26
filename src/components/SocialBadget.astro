@@ -2,7 +2,16 @@
   target='_blank'
   referrerpolicy='no-referrer'
   rel='noopener noreferrer'
-  class='rounded-full inline-flex flex-row gap-2 items-center border-white/20 border-[1px] px-4 py-2 bg-white/5 hover:scale-110 hover:bg-white/20 transition text-sm'
+  class={`
+    rounded-full 
+    inline-flex flex-row gap-2 items-center 
+    border-lavender/20 border-[1px] 
+    px-4 py-2 
+    bg-slate-600/5 
+    transition 
+    text-sm text-lavender/80
+    hover:scale-105 hover:bg-deep-purple/20  hover:text-deep-purple hover:border-deep-purple
+  `}
   {...Astro.props}
 >
   <slot />
