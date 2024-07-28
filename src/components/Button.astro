@@ -1,0 +1,13 @@
+<button
+  {...Astro.props}
+  class={`
+    flex items-center justify-center 
+    px-3 me-3 
+    h-8 
+    text-sm md:text-base font-medium text-electric-purple 
+    rounded-lg  transition-colors
+    hover:bg-electric-purple/10 hover:text-electric-purple 
+  `}
+>
+  <slot />
+</button>

@@ -1,36 +1,110 @@
 ---
 import { TAGS } from '../constants';
-import TechnologyBadget from './TechnologyBadget.astro';
+import ProjectItem from './ProjectItem.astro';
+import Button from './Button.astro';
 
 const PROJECTS = [
   {
-    title: 'Project 1',
+    title: 'MapBox App - React',
     description:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!',
-    link: 'https://svgl.app/',
-    github: 'https://github.com/pheralb/svgl',
+      'Mapbox gl - library Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!',
+    link: '',
+    github: 'https://github.com/JuanDa15/mapbox-app-react',
+    image: '/projects/svgl.webp',
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: 'Country finder - Angular',
+    description:
+      'Rest countries api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!',
+    link: '',
+    github: 'https://github.com/JuanDa15/country-finder-angular',
+    image: '/projects/svgl.webp',
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: 'Giphy App - Angular',
+    description:
+      'Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!',
+    link: '',
+    github: 'https://github.com/JuanDa15/graph-app-angular',
+    image: '/projects/svgl.webp',
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: 'Mapbox App - Angular',
+    description:
+      'Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!',
+    link: '',
+    github: 'https://github.com/JuanDa15/maps-app-angular',
+    image: '/projects/svgl.webp',
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: 'Spotify Preview - Angular',
+    description:
+      'Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!',
+    link: '',
+    github: 'https://github.com/JuanDa15/Spotify-Previews-Angular',
+    image: '/projects/svgl.webp',
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: 'Movies App - Angular',
+    description:
+      'Using the movie DB api api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!',
+    link: '',
+    github: 'https://github.com/JuanDa15/Spotify-Previews-Angular',
+    image: '/projects/svgl.webp',
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: 'Giphy App - React',
+    description:
+      'Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!',
+    link: '',
+    github: '  https://github.com/JuanDa15/Gif-App-React',
     image: '/projects/svgl.webp',
     tags: [TAGS.NEXT, TAGS.TAILWIND],
   },
 ];
 ---
 
-{
-  PROJECTS.map(({ description, github, image, link, tags, title }) => (
-    <article>
-      <h3 class='text-xl font-semibold text-electric-purple mb-2'>{title}</h3>
-      <p class='text-lg mb-4 text-pretty'>{description}</p>
-      <ul class='flex flex-row gap-3 my-3'>
-        {tags.map((tag) => (
-          <li>
-            <TechnologyBadget>
-              <tag.icon class='h-5 w-5' />
-              {tag.name}
-            </TechnologyBadget>
-          </li>
-        ))}
-      </ul>
-      <img class='rounded shadow-2xl shadow-white/5' src={image} />
-    </article>
-  ))
-}
+<section class='grid grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-3'>
+  {PROJECTS.slice(0, 2).map((project) => <ProjectItem {...project} />)}
+</section>
+
+<div class='flex justify-between my-5'>
+  <Button>
+    <svg
+      class='w-3.5 h-3.5 me-2 rtl:rotate-180'
+      aria-hidden='true'
+      fill='none'
+      viewBox='0 0 14 10'
+    >
+      <path
+        stroke='currentColor'
+        stroke-linecap='round'
+        stroke-linejoin='round'
+        stroke-width='2'
+        d='M13 5H1m0 0 4 4M1 5l4-4'></path>
+    </svg>
+    Previous
+  </Button>
+  <Button>
+    Next
+    <svg
+      class='w-3.5 h-3.5 ms-2 rtl:rotate-180'
+      aria-hidden='true'
+      fill='none'
+      viewBox='0 0 14 10'
+    >
+      <path
+        stroke='currentColor'
+        stroke-linecap='round'
+        stroke-linejoin='round'
+        stroke-width='2'
+        d='M1 5h12m0 0L9 1m4 4L9 9'></path>
+    </svg>
+  </Button>
+</div>
