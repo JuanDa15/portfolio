@@ -121,10 +121,10 @@ const PROJECTS = [
 </div>
 
 <script>
-  const slider$: HTMLElement | null =
-    document.getElementById('projects-slider');
-  const prevBtn$: HTMLElement | null = document.getElementById('prev-btn');
-  const nextBtn$: HTMLElement | null = document.getElementById('next-btn');
+  // TODO: MIRAR COMO SOLUCIONAR EL BUG DE LOS listeners
+  let slider$: HTMLElement | null = document.getElementById('projects-slider');
+  let prevBtn$: HTMLElement | null = document.getElementById('prev-btn');
+  let nextBtn$: HTMLElement | null = document.getElementById('next-btn');
 
   function clickHandler(event: MouseEvent) {
     if (!slider$) return;
@@ -161,14 +161,8 @@ const PROJECTS = [
       return;
     }
   }
-
   prevBtn$?.addEventListener('click', clickHandler);
   nextBtn$?.addEventListener('click', clickHandler);
-
-  window.addEventListener('beforeunload', () => {
-    nextBtn$?.removeEventListener('click', clickHandler);
-    prevBtn$?.removeEventListener('click', clickHandler);
-  });
 </script>
 
 <style>
