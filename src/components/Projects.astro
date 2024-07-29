@@ -70,12 +70,20 @@ const PROJECTS = [
 ];
 ---
 
-<section class='grid grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-3'>
-  {PROJECTS.slice(0, 2).map((project) => <ProjectItem {...project} />)}
+<section
+  id='projects-slider'
+  class={`
+    flex flex-row gap-4 
+    overflow-x-auto scroll-smooth snap-x snap-mandatory 
+    py-4 mx-auto
+    w-[290px] md:w-[590px] lg:w-[740px]
+  `}
+>
+  {PROJECTS.map((project) => <ProjectItem {...project} />)}
 </section>
 
-<div class='flex justify-between my-5'>
-  <Button>
+<div class='flex justify-between my-4'>
+  <Button id='prev-btn'>
     <svg
       class='w-3.5 h-3.5 me-2 rtl:rotate-180'
       aria-hidden='true'
@@ -91,10 +99,13 @@ const PROJECTS = [
     </svg>
     Previous
   </Button>
-  <Button>
+  <Button id='next-btn'>
     Next
     <svg
-      class='w-3.5 h-3.5 ms-2 rtl:rotate-180'
+      class='w-3.5
+    h-3.5
+    ms-2
+    rtl:rotate-180'
       aria-hidden='true'
       fill='none'
       viewBox='0 0 14 10'
@@ -108,3 +119,60 @@ const PROJECTS = [
     </svg>
   </Button>
 </div>
+
+<script>
+  const slider$: HTMLElement | null =
+    document.getElementById('projects-slider');
+  const prevBtn$: HTMLElement | null = document.getElementById('prev-btn');
+  const nextBtn$: HTMLElement | null = document.getElementById('next-btn');
+
+  function clickHandler(event: MouseEvent) {
+    if (!slider$) return;
+
+    const { id } = event.target as HTMLElement;
+
+    const isDecrement = id.includes('prev');
+    const isIncrement = id.includes('next');
+
+    let sliderScrollWidth = slider$.scrollWidth;
+    const currentScroll = slider$.scrollLeft;
+
+    if (isIncrement) {
+      const width = slider$.offsetWidth;
+      const newScroll = currentScroll + width;
+
+      if (newScroll >= sliderScrollWidth) {
+        slider$.scrollLeft = 0;
+        return;
+      }
+      slider$.scrollLeft = currentScroll + width;
+      return;
+    }
+
+    if (isDecrement) {
+      const width = -slider$.offsetWidth;
+      const newScroll = currentScroll + width;
+
+      if (newScroll <= width) {
+        slider$.scrollLeft = sliderScrollWidth + width;
+        return;
+      }
+      slider$.scrollLeft = currentScroll + width;
+      return;
+    }
+  }
+
+  prevBtn$?.addEventListener('click', clickHandler);
+  nextBtn$?.addEventListener('click', clickHandler);
+
+  window.addEventListener('beforeunload', () => {
+    nextBtn$?.removeEventListener('click', clickHandler);
+    prevBtn$?.removeEventListener('click', clickHandler);
+  });
+</script>
+
+<style>
+  #projects-slider {
+    scrollbar-width: none;
+  }
+</style>

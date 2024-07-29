@@ -38,6 +38,8 @@ const { title, description } = Astro.props;
       sans-serif;
     color-scheme: light dark;
     scroll-behavior: smooth;
+    scrollbar-color: #9b30ff rgb(24, 24, 24);
+    scrollbar-width: thin;
   }
 
   body {
@@ -48,7 +50,6 @@ const { title, description } = Astro.props;
     align-items: center;
     min-height: 100vh;
   }
-
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
