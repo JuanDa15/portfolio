@@ -1,73 +1,10 @@
 ---
-import { TAGS } from '../constants';
 import ProjectItem from './ProjectItem.astro';
+import SliderScript from './SliderScript';
 import Button from './Button.astro';
+import { PROJECTS as PROJECTS_SRC } from '../data/projects';
 
-const PROJECTS = [
-  {
-    title: 'MapBox App - React',
-    description:
-      'Mapbox gl - library Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!',
-    link: '',
-    github: 'https://github.com/JuanDa15/mapbox-app-react',
-    image: '/projects/svgl.webp',
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
-  {
-    title: 'Country finder - Angular',
-    description:
-      'Rest countries api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!',
-    link: '',
-    github: 'https://github.com/JuanDa15/country-finder-angular',
-    image: '/projects/svgl.webp',
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
-  {
-    title: 'Giphy App - Angular',
-    description:
-      'Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!',
-    link: '',
-    github: 'https://github.com/JuanDa15/graph-app-angular',
-    image: '/projects/svgl.webp',
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
-  {
-    title: 'Mapbox App - Angular',
-    description:
-      'Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!',
-    link: '',
-    github: 'https://github.com/JuanDa15/maps-app-angular',
-    image: '/projects/svgl.webp',
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
-  {
-    title: 'Spotify Preview - Angular',
-    description:
-      'Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!',
-    link: '',
-    github: 'https://github.com/JuanDa15/Spotify-Previews-Angular',
-    image: '/projects/svgl.webp',
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
-  {
-    title: 'Movies App - Angular',
-    description:
-      'Using the movie DB api api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!',
-    link: '',
-    github: 'https://github.com/JuanDa15/Spotify-Previews-Angular',
-    image: '/projects/svgl.webp',
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
-  {
-    title: 'Giphy App - React',
-    description:
-      'Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!',
-    link: '',
-    github: '  https://github.com/JuanDa15/Gif-App-React',
-    image: '/projects/svgl.webp',
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
-];
+const PROJECTS = PROJECTS_SRC;
 ---
 
 <section
@@ -120,50 +57,7 @@ const PROJECTS = [
   </Button>
 </div>
 
-<script>
-  // TODO: MIRAR COMO SOLUCIONAR EL BUG DE LOS listeners
-  let slider$: HTMLElement | null = document.getElementById('projects-slider');
-  let prevBtn$: HTMLElement | null = document.getElementById('prev-btn');
-  let nextBtn$: HTMLElement | null = document.getElementById('next-btn');
-
-  function clickHandler(event: MouseEvent) {
-    if (!slider$) return;
-
-    const { id } = event.target as HTMLElement;
-
-    const isDecrement = id.includes('prev');
-    const isIncrement = id.includes('next');
-
-    let sliderScrollWidth = slider$.scrollWidth;
-    const currentScroll = slider$.scrollLeft;
-
-    if (isIncrement) {
-      const width = slider$.offsetWidth;
-      const newScroll = currentScroll + width;
-
-      if (newScroll >= sliderScrollWidth) {
-        slider$.scrollLeft = 0;
-        return;
-      }
-      slider$.scrollLeft = currentScroll + width;
-      return;
-    }
-
-    if (isDecrement) {
-      const width = -slider$.offsetWidth;
-      const newScroll = currentScroll + width;
-
-      if (newScroll <= width) {
-        slider$.scrollLeft = sliderScrollWidth + width;
-        return;
-      }
-      slider$.scrollLeft = currentScroll + width;
-      return;
-    }
-  }
-  prevBtn$?.addEventListener('click', clickHandler);
-  nextBtn$?.addEventListener('click', clickHandler);
-</script>
+<SliderScript client:load />
 
 <style>
   #projects-slider {
