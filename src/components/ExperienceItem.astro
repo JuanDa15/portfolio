@@ -1,20 +1,19 @@
 ---
 import TechnologyBadget from './TechnologyBadget.astro';
+import { TAGS } from '../constants';
+import type { TagName } from '../types';
 
 interface Props {
+  id: number;
   title: string;
   description: string;
   link?: string;
   date: string;
   company: string;
-  tags: {
-    name: string;
-    class: string;
-    icon: (_props: Record<string, any>) => any;
-  }[];
+  tags: TagName[];
 }
 
-const { title, description, link, date, company, tags } = Astro.props;
+const { title, description, link, date, company, tags, id } = Astro.props;
 ---
 
 <li class='mb-10 ms-5'>
@@ -60,11 +59,15 @@ const { title, description, link, date, company, tags } = Astro.props;
   </p>
   <div class='mb-4 flex flex-row gap-x-2 gap-y-1 flex-wrap'>
     {
-      tags.map(({ name, icon: Icon, class: className }) => (
-        <TechnologyBadget class={`${className} text-xs`}>
-          <Icon class={`size-5 md:size-6`} /> {name}
-        </TechnologyBadget>
-      ))
+      tags.map((tag) => {
+        const { class: className, id, name, icon: Icon } = TAGS[tag];
+
+        return (
+          <TechnologyBadget class={`${className} text-xs`}>
+            <Icon class={`size-5 md:size-6`} /> {name}
+          </TechnologyBadget>
+        );
+      })
     }
   </div>
 
@@ -73,7 +76,16 @@ const { title, description, link, date, company, tags } = Astro.props;
     link && (
       <a
         href={link}
-        class='inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700'
+        class={`
+          inline-flex items-center 
+          px-4 py-2 
+          text-sm font-medium text-gray-400 
+          bg-black hover:text-deep-purple hover:border-deep-purple hover:bg-deep-purple/20
+          border border-gray-600
+          rounded-lg   
+          focus:z-10 focus:ring-4 focus:outline-none focus:ring-electric-purple/20  focus:text-deep-purple
+          transition-colors
+        `}
       >
         See more{' '}
         <svg

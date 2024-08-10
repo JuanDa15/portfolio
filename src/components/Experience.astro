@@ -1,32 +1,8 @@
 ---
-import { TAGS } from '../constants';
+import { getAllExperience } from '../services/experience';
 import ExperienceItem from './ExperienceItem.astro';
 
-const EXPERIENCE = [
-  {
-    title: 'Frontend Developer',
-    company: 'Logical Growth S.A.S',
-    date: 'January 2022 - Present',
-    description:
-      'Developed and maintained user interfaces for various web applications using Angular and React/Next.js. Collaborated with the design team to ensure seamless user experiences. Additionally, developed new products and features for different projects, ensuring optimal performance and continuous optimization.',
-    tags: [
-      TAGS.ANGULAR,
-      TAGS.NEXT,
-      TAGS.REACT,
-      TAGS.FIGMA,
-      TAGS.GITHUB,
-      TAGS.AWS,
-    ],
-  },
-  {
-    title: 'Frontend Developer',
-    company: 'Freelance',
-    date: 'March 2021 - February 2022',
-    description:
-      'Designed and implemented customized solutions for clients with specific needs, using various frontend technologies such as Angular and React.',
-    tags: [TAGS.ANGULAR, TAGS.REACT, TAGS.FIGMA, TAGS.GITHUB],
-  },
-];
+const EXPERIENCE = await getAllExperience();
 ---
 
 <ol
