@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getProjectById } from '../../services/projects';
+export function getStaticPaths() {
+  return [
+    { params: { id: '1' } },
+    { params: { id: '2' } },
+    { params: { id: '3' } },
+    { params: { id: '4' } },
+    { params: { id: '5' } },
+    { params: { id: '6' } },
+    { params: { id: '7' } },
+  ];
+}
+
+const { id } = Astro.params;
+
+const project = await getProjectById(id);
+---
+
+<Layout title={`Project ${id}`} description='...'>
+  {project?.title}
+</Layout>

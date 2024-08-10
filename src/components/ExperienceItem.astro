@@ -75,7 +75,7 @@ const { title, description, link, date, company, tags, id } = Astro.props;
   {
     link && (
       <a
-        href={link}
+        href={`${link}/${id}`}
         class={`
           inline-flex items-center 
           px-4 py-2 

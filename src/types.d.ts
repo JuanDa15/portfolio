@@ -11,4 +11,16 @@ export interface IExperience {
   achievements: string[]
 }
 
+export interface IProject {
+  id: number;
+  title: string;
+  description: string;
+  link?: string;
+  github: string;
+  preview: string;
+  tags: TagName[];
+  images: string[]
+}
+
+
 export type TagName = keyof typeof TAGS;

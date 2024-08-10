@@ -2,9 +2,9 @@
 import ProjectItem from './ProjectItem.astro';
 import SliderScript from './SliderScript';
 import Button from './Button.astro';
-import { PROJECTS as PROJECTS_SRC } from '../data/projects';
+import { getAllProjects } from '../services/projects';
 
-const PROJECTS = PROJECTS_SRC;
+const PROJECTS = await getAllProjects();
 ---
 
 <section
