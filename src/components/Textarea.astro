@@ -1,0 +1,18 @@
+---
+const { id, name, ...others } = Astro.props;
+---
+
+<textarea
+  id={id}
+  name={name}
+  rows='4'
+  {...others}
+  class={`
+    block p-2.5 w-full 
+    text-sm text-white 
+    bg-gray-950 placeholder-gray-400
+    rounded-lg border border-gray-600 
+    focus:ring-blue-500 focus:border-blue-500
+  `}
+>
+</textarea>

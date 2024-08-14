@@ -1,0 +1,17 @@
+---
+const { id, name, ...others } = Astro.props;
+---
+
+<input
+  type='text'
+  id={id}
+  name={name}
+  class={`
+    bg-gray-950 placeholder-gray-400
+      border border-gray-600 rounded-lg
+    text-white text-sm 
+    focus:ring-blue-500 focus:border-blue-500 
+      block w-full p-2.5
+    `}
+  {...others}
+/>

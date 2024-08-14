@@ -1,0 +1,91 @@
+---
+import Button from '../../components/Button.astro';
+import SectionContainer from '../../components/SectionContainer.astro';
+import TechnologyBadget from '../../components/TechnologyBadget.astro';
+import { TAGS } from '../../constants';
+import CodeIcon from '../../icons/CodeIcon.astro';
+import Layout from '../../layouts/Layout.astro';
+import { getAllProjects } from '../../services/projects';
+import type { IProject, TagName } from '../../types';
+import { convertToMasonryFormat } from '../../utils/masonry';
+import ArrowRightIcon from '../../icons/ArrowRightIcons.astro';
+
+let PROJECTS = convertToMasonryFormat<IProject>({
+  columns: 2,
+  data: await getAllProjects(),
+});
+---
+
+<Layout title='projects' description='...'>
+  <SectionContainer class='mt-10 mb-10' id='projects'>
+    <h2
+      class={`
+        text-2xl md:text-4xl lg:text-5xl font-semibold 
+        mb-6 md:mb-10 
+        flex gap-x-4 items-center justify-center
+      `}
+    >
+      <CodeIcon class='w-6 h-6' /> Projects
+    </h2>
+    <div class={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 p-6`}>
+      {
+        PROJECTS.map((item) => (
+          <div class='grid gap-4'>
+            {item.map((project) => (
+              <div class='relative overflow-hidden rounded-lg group'>
+                <img
+                  class='h-full max-w-full rounded-lg [&:hover > div]: translate-x-0 blur-none  group-hover:blur-sm'
+                  src={project.preview}
+                  alt={project.title}
+                />
+                <div
+                  class={`
+                    h-full w-full 
+                    bg-black/70 
+                    absolute top-0 left-0 
+                    p-4
+                    transform -translate-x-full transition-transform duration-300 group-hover:translate-x-0
+                    flex flex-col
+                  `}
+                >
+                  <p class='inline-block text-xl md:text-2xl font-black'>
+                    {project.title}
+                  </p>
+
+                  <ul class='my-16 flex flex-row flex-wrap gap-2 lg:gap-3'>
+                    {project?.tags.map((tag: TagName) => {
+                      const { class: className, name, icon: Icon } = TAGS[tag];
+                      return (
+                        <TechnologyBadget class={`${className} text-xs`}>
+                          <Icon class={`size-5 md:size-6`} /> {name}
+                        </TechnologyBadget>
+                      );
+                    })}
+                  </ul>
+                  <div class='flex-auto' />
+                  <a
+                    href={`/projects/${project.id}`}
+                    class={`
+                        w-full
+                        inline-flex items-center 
+                        px-4 py-2 
+                        text-sm font-medium text-gray-400 
+                        bg-black/20 hover:text-deep-purple hover:border-deep-purple hover:bg-deep-purple/20
+                        border border-gray-600
+                        rounded-lg   
+                        focus:z-10 focus:ring-4 focus:outline-none focus:ring-electric-purple/20  focus:text-deep-purple
+                        transition-colors
+                        cursor-pointer
+                      `}
+                  >
+                    See more <ArrowRightIcon class='ml-auto' />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+  </SectionContainer>
+</Layout>
