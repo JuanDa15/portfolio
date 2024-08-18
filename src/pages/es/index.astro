@@ -1,0 +1,118 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Badget from '../../components/Badget.astro';
+import LinkedInIcon from '../../icons/LinkedInIcon.astro';
+import SocialBadget from '../../components/SocialBadget.astro';
+import GitHubIcon from '../../icons/GitHubIcon.astro';
+import DownloadIcon from '../../icons/DownloadIcon.astro';
+import Experience from '../../components/Experience.astro';
+import SectionContainer from '../../components/SectionContainer.astro';
+import Briefcase from '../../icons/BriefcaseIcon.astro';
+import MailIcon from '../../icons/MailIcon.astro';
+import MailForm from '../../components/MailForm.astro';
+import Profile from '../../components/Profile.astro';
+
+const links = {
+  linkedIn: 'https://www.linkedin.com/in/jdoo15/',
+  gitHub: 'https://github.com/JuanDa15/',
+  mail: 'mailto:jdoo1115@gmail.com',
+};
+
+const calculateExperience = () => {
+  const initialDate = new Date('01-01-2022');
+  const today = new Date();
+
+  const yearsDiff = today.getFullYear() - initialDate.getFullYear();
+  const monthsDiff = today.getMonth() - initialDate.getMonth();
+
+  return Math.ceil(Number(`${yearsDiff}.${monthsDiff}`));
+};
+---
+
+<Layout title='Portfolio Juan David - Web Developer' description='...'>
+  <main class='px-4'>
+    <SectionContainer
+      class='flex flex-col mt-24 mb-56 md:mt-32 md:mb-96'
+      id='top'
+    >
+      <Profile />
+      <h1
+        class={`
+          text-2xl md:text-4xl lg:text-5xl font-bold 
+          flex items-center gap-x-4 md:gap-x-6 
+          mb-8 md:mb-10
+        `}
+      >
+        Hey, I'm Juan David
+        <a
+          class='flex align-center'
+          href={links.linkedIn}
+          target='_blank'
+          referrerpolicy='no-referrer'
+        >
+          <Badget>Available for hire</Badget>
+        </a>
+      </h1>
+      <p
+        class={`
+          text-xl lg:text-2xl 
+          opacity-70 
+          text-balance
+        `}
+      >
+        <b class='text-electric-purple/90'>
+          + {calculateExperience()} years experience.
+        </b>
+        <span class='opacity-40'>
+          Front end developer based in Pereira, Colombia.
+        </span>
+        Specialized in creating applications in diferent Frontend frameworks.
+      </p>
+
+      <nav
+        class={`
+          flex flex-row gap-x-4 gap-y-3 items-center flex-wrap
+          mt-8 lg:mt-12 
+        `}
+      >
+        <SocialBadget href={links.linkedIn}>
+          <LinkedInIcon class='w-5 h-5' /> LinkedIn
+        </SocialBadget>
+        <SocialBadget href={links.gitHub}>
+          <GitHubIcon class='w-5 h-5' /> GitHub
+        </SocialBadget>
+        <SocialBadget href={links.mail}>
+          <MailIcon class='w-5 h-5' />
+          <span>jdoo1115@gmail.com</span>
+        </SocialBadget>
+        <SocialBadget download='CV_JUAN_DAVID' href='/cv/CV_JUAN_DAVID_EN.pdf'>
+          <DownloadIcon class='w-5 h-5' /> CV
+        </SocialBadget>
+      </nav>
+    </SectionContainer>
+    <SectionContainer id='experience'>
+      <h2
+        class={`
+          flex gap-x-4 items-center
+          mb-10 
+          text-2xl md:text-4xl lg:text-5xl  font-semibold 
+        `}
+      >
+        <Briefcase class='size-6 md:size-8' /> Job experience
+      </h2>
+      <Experience />
+    </SectionContainer>
+    <SectionContainer class='my-32'>
+      <h2
+        class={`
+        flex gap-x-4 items-center
+        mb-10 
+        text-2xl md:text-4xl lg:text-5xl  font-semibold 
+      `}
+      >
+        <MailIcon class='size-6 md:size-8' /> Contact
+      </h2>
+      <MailForm />
+    </SectionContainer>
+  </main>
+</Layout>
