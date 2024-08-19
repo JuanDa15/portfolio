@@ -1,13 +1,16 @@
 ---
 import {
   getLangFromUrl,
+  getRouteFromUrl,
   useTranslatedPath,
   useTranslations,
 } from '../i18n/utils';
+import LanguagePicker from './LanguagePicker.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const tp = useTranslatedPath(lang);
+const route = getRouteFromUrl(Astro.url) ?? '/';
 
 const links = [
   {
@@ -28,7 +31,7 @@ const links = [
 <header
   class={`
   w-full xl:w-[1120px]
-  flex justify-center items-center gap-x-3
+  flex justify-between items-center gap-x-3
   py-5 px-3
 `}
 >
@@ -49,6 +52,7 @@ const links = [
             transition-colors
             hover:bg-electric-purple/10 hover:text-electric-purple
             active:bg-electric-purple/30 active:text-electric-purple
+            ${link.replace('/', '') === tp(route).replace('/', '') ? 'bg-electric-purple/30 text-electric-purple' : ''}
           `}
           href={link}
         >
@@ -57,4 +61,6 @@ const links = [
       ))
     }
   </nav>
+
+  <LanguagePicker />
 </header>

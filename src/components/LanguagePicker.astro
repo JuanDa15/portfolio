@@ -1,0 +1,34 @@
+---
+import { languages } from '@/i18n';
+import {
+  getLangFromUrl,
+  getRouteFromUrl,
+  useTranslatedPath,
+} from '@/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const route = getRouteFromUrl(Astro.url) ?? '/';
+const tp = useTranslatedPath(lang);
+---
+
+<div class='inline-flex rounded-md shadow-sm' role='group'>
+  {
+    Object.keys(languages).map((language, index) => (
+      <a
+        href={`${tp(route, language)}`}
+        class={`
+          px-4 py-2 
+          text-sm font-medium text-white 
+          bg-transparent 
+          border border-white 
+          hover:text-white hover:bg-gray-700 
+          focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-700 focus:text-white
+          ${index === 0 ? 'rounded-s-lg' : ''} ${index === 1 ? 'rounded-e-lg' : ''}
+          ${language === lang ? 'bg-gray-500' : ''}
+        `}
+      >
+        {language}
+      </a>
+    ))
+  }
+</div>

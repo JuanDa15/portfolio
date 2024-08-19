@@ -7,8 +7,16 @@ const LANG = {
 }
 
 export const languages = {
-  en: 'English',
-  es: 'Español'
+  en: {
+    label: 'English',
+    abbr: 'EN',
+    locale: LANG.ENGLISH
+  },
+  es: {
+    label: 'Español',
+    abbr: 'ES',
+    locale: LANG.SPANISH
+  }
 }
 
 export type Lang = keyof typeof languages;
