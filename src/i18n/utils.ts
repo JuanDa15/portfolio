@@ -24,7 +24,6 @@ export function useTranslatedPath(lang: Lang) {
     const translatedPath = hasTranslation
       ? '/' + (routes[l as Lang] as Record<string, string>)[pathName]
       : path
-    console.log(translatedPath)
     return !showDefaultLang && l === DEFAULT_LANG
       ? `${translatedPath}`
       : `/${l}${translatedPath}`
