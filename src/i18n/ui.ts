@@ -1,11 +1,8 @@
-export const languages = {
-  en: 'English',
-  es: 'Español'
-}
+import type { Lang } from "@/i18n";
 
-export const defaultLang = 'en'
+export const showDefaultLang = false;
 
-export const ui = {
+export const ui: Record<Lang, Record<string, string>> = {
   en: {
     'nav.home': 'Home',
     'nav.about': 'About',
@@ -18,3 +15,15 @@ export const ui = {
   }
 } as const
 
+export const routes: Record<Lang, Record<string, string>> = {
+  en: {
+    home: '',
+    about: 'about',
+    projects: 'projects'
+  },
+  es: {
+    home: '',
+    about: 'sobre-mi',
+    projects: 'proyectos'
+  }
+}
