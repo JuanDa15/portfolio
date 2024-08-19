@@ -26,7 +26,7 @@ const { currentLocale } = Astro;
   </head>
   <body class='dark:bg-black overflow-y-auto'>
     <!-- <div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div> -->
-    <Header />
+    <Header transition:persist />
     <main class='min-h-[calc(100vh-96px-153px)]'>
       <slot />
     </main>

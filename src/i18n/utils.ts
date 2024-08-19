@@ -34,7 +34,6 @@ export const getRouteFromUrl = (url: URL): string | undefined => {
   const pathname = new URL(url).pathname;
   const parts = pathname.split('/')
   const path = parts.pop() || parts.pop()
-
   if (path === undefined) return undefined
 
   const currentLang = getLangFromUrl(url)

@@ -29,11 +29,13 @@ export const routes: Record<Lang, Record<string, string>> = {
   en: {
     home: '',
     about: 'about',
-    projects: 'projects'
+    projects: 'projects',
+    experience: 'experience'
   },
   es: {
     home: '',
     about: 'sobre-mi',
-    projects: 'proyectos'
+    projects: 'proyectos',
+    experience: 'experiencia'
   }
 }

@@ -9,12 +9,19 @@ import type { IProject, TagName } from '@/types';
 import { convertToMasonryFormat } from '@/utils/masonry';
 import ArrowRightIcon from '@/icons/ArrowRightIcons.astro';
 import { getI18N } from '@/i18n';
+import {
+  getLangFromUrl,
+  useTranslatedPath,
+  useTranslations,
+} from '@/i18n/utils';
 
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
+const lang = getLangFromUrl(Astro.url);
+const i18n = getI18N({ currentLocale: lang });
+const t = useTranslations(lang);
+const tp = useTranslatedPath(lang);
 let PROJECTS = convertToMasonryFormat<IProject>({
   columns: 2,
-  data: await getAllProjects(currentLocale),
+  data: await getAllProjects(lang),
 });
 ---
 
@@ -67,7 +74,7 @@ let PROJECTS = convertToMasonryFormat<IProject>({
                   </ul>
                   <div class='flex-auto' />
                   <a
-                    href={`/projects/${project.id}`}
+                    href={`${tp('/projects')}/${project.id}`}
                     class={`
                         w-full
                         inline-flex items-center 
@@ -81,7 +88,7 @@ let PROJECTS = convertToMasonryFormat<IProject>({
                         cursor-pointer
                       `}
                   >
-                    See more <ArrowRightIcon class='ml-auto' />
+                    {t('btn.more')} <ArrowRightIcon class='ml-auto' />
                   </a>
                 </div>
               </div>

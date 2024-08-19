@@ -1,7 +1,6 @@
 ---
 import {
   getLangFromUrl,
-  getRouteFromUrl,
   useTranslatedPath,
   useTranslations,
 } from '../i18n/utils';
@@ -10,8 +9,7 @@ import LanguagePicker from './LanguagePicker.astro';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const tp = useTranslatedPath(lang);
-const route = getRouteFromUrl(Astro.url) ?? '/';
-
+const currentPath = Astro.url.pathname;
 const links = [
   {
     link: tp('/', lang),
@@ -26,6 +24,7 @@ const links = [
     text: t('nav.projects'),
   },
 ];
+console.log(currentPath);
 ---
 
 <header
@@ -52,7 +51,7 @@ const links = [
             transition-colors
             hover:bg-electric-purple/10 hover:text-electric-purple
             active:bg-electric-purple/30 active:text-electric-purple
-            ${link.replace('/', '') === tp(route).replace('/', '') ? 'bg-electric-purple/30 text-electric-purple' : ''}
+            ${link === currentPath ? 'bg-electric-purple/30 text-electric-purple' : ''}
           `}
           href={link}
         >
