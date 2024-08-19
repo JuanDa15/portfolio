@@ -1,20 +1,26 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import {
+  getLangFromUrl,
+  useTranslatedPath,
+  useTranslations,
+  getRouteFromUrl,
+} from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const tp = useTranslatedPath(lang);
 
 const links = [
   {
-    link: '/',
+    link: tp('', lang),
     text: t('nav.home'),
   },
   {
-    link: '/about',
+    link: tp('about', lang),
     text: t('nav.about'),
   },
   {
-    link: '/projects',
+    link: tp('projects', lang),
     text: t('nav.projects'),
   },
 ];

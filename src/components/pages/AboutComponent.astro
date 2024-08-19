@@ -1,0 +1,64 @@
+---
+import Profile from '@/components/Profile.astro';
+import SectionContainer from '@/components/SectionContainer.astro';
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title='about' description='...'>
+  <SectionContainer class='p-6'>
+    <Profile class='xl:size-16 mt-6' />
+
+    <h1
+      class='mt-6 mb-14 text-2xl md:text-3xl font-semibold text-electric-purple'
+    >
+      Hey, I'm Juan David
+    </h1>
+
+    <div class='flex flex-col gap-y-8 mb-28'>
+      <div class='grid grid-cols-[150px_1fr]'>
+        <p class='text-sm md:text-base'><b>Who i am</b></p>
+        <p class='opacity-60 text-sm md:text-base'>
+          I am a Frontend Web Developer specializing in crafting scalable and
+          high-performance web applications. I am passionate about delivering
+          exceptional user experiences through thoughtful design and optimized
+          front-end solutions.
+        </p>
+      </div>
+      <div class='grid grid-cols-[150px_1fr]'>
+        <p class='text-sm md:text-base'><b>Education</b></p>
+        <p class='opacity-60 text-sm md:text-base'>
+          I graduated with a degree in Systems Engineering and Computation from
+          Universidad Tecnológica de Pereira in 2022.
+        </p>
+      </div>
+      <div class='grid grid-cols-[150px_1fr]'>
+        <p class='text-sm md:text-base'><b>Experience</b></p>
+        <p class='opacity-60 text-sm md:text-base'>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate
+          atque totam qui sint suscipit officia quis earum velit molestiae,
+          nesciunt accusamus dignissimos eaque vitae ad aliquam maiores, itaque
+          laudantium. Ducimus!
+        </p>
+      </div>
+      <div class='grid grid-cols-[150px_1fr]'>
+        <p class='text-sm md:text-base'><b>Work History</b></p>
+        <ul class='flex flex-col gap-6'>
+          <li>
+            <p class='font-semibold opacity-80'>
+              Front End Developer - Logical Growth S.A.S
+            </p>
+            <p class='opacity-60'>
+              <small>January 2022 - Present</small>
+            </p>
+          </li>
+          <li>
+            <p class='font-semibold opacity-80'>
+              Front End Developer - Freelance
+            </p>
+            <p class='opacity-60'><small>March 2021 - February 2022</small></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </SectionContainer>
+</Layout>
