@@ -8,10 +8,13 @@ import { getAllProjects } from '@/services/projects';
 import type { IProject, TagName } from '@/types';
 import { convertToMasonryFormat } from '@/utils/masonry';
 import ArrowRightIcon from '@/icons/ArrowRightIcons.astro';
+import { getI18N } from '@/i18n';
 
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 let PROJECTS = convertToMasonryFormat<IProject>({
   columns: 2,
-  data: await getAllProjects(),
+  data: await getAllProjects(currentLocale),
 });
 ---
 
@@ -24,7 +27,8 @@ let PROJECTS = convertToMasonryFormat<IProject>({
         flex gap-x-4 items-center justify-center
       `}
     >
-      <CodeIcon class='w-6 h-6' /> Projects
+      <CodeIcon class='w-6 h-6' />
+      {i18n.PROJECTS_TITLE}
     </h2>
     <div class={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 p-6`}>
       {

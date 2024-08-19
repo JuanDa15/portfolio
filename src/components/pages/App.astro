@@ -11,6 +11,10 @@ import Briefcase from '@/icons/BriefcaseIcon.astro';
 import MailIcon from '@/icons/MailIcon.astro';
 import MailForm from '@/components/MailForm.astro';
 import Profile from '@/components/Profile.astro';
+import { getI18N } from '@/i18n';
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
 const links = {
   linkedIn: 'https://www.linkedin.com/in/jdoo15/',
@@ -29,7 +33,7 @@ const calculateExperience = () => {
 };
 ---
 
-<Layout title='Portfolio Juan David - Web Developer' description='...'>
+<Layout title={i18n.SEO_TITLE_1} description={i18n.SEO_DESCRIPTION_1}>
   <main class='px-4'>
     <SectionContainer
       class='flex flex-col mt-24 mb-56 md:mt-32 md:mb-96'
@@ -43,14 +47,14 @@ const calculateExperience = () => {
           mb-8 md:mb-10
         `}
       >
-        Hey, I'm Juan David
+        {i18n.INTRO_TITLE}
         <a
           class='flex align-center'
           href={links.linkedIn}
           target='_blank'
           referrerpolicy='no-referrer'
         >
-          <Badget>Available for hire</Badget>
+          <Badget>{i18n.INTRO_BADGET}</Badget>
         </a>
       </h1>
       <p
@@ -61,12 +65,13 @@ const calculateExperience = () => {
         `}
       >
         <b class='text-electric-purple/90'>
-          + {calculateExperience()} years experience.
+          + {calculateExperience()}
+          {i18n.INTRO_DESCRIPTION_1}.
         </b>
         <span class='opacity-40'>
-          Front end developer based in Pereira, Colombia.
+          {i18n.INTRO_DESCRIPTION_2}
         </span>
-        Specialized in creating applications in diferent Frontend frameworks.
+        {i18n.INTRO_DESCRIPTION_3}
       </p>
 
       <nav
@@ -98,7 +103,8 @@ const calculateExperience = () => {
           text-2xl md:text-4xl lg:text-5xl  font-semibold 
         `}
       >
-        <Briefcase class='size-6 md:size-8' /> Job experience
+        <Briefcase class='size-6 md:size-8' />
+        {i18n.EXPERIENCE_TITLE}
       </h2>
       <Experience />
     </SectionContainer>
@@ -110,7 +116,8 @@ const calculateExperience = () => {
         text-2xl md:text-4xl lg:text-5xl  font-semibold 
       `}
       >
-        <MailIcon class='size-6 md:size-8' /> Contact
+        <MailIcon class='size-6 md:size-8' />
+        {i18n.CONTACT_TITLE}
       </h2>
       <MailForm />
     </SectionContainer>

@@ -17,7 +17,7 @@ export const DEFAULT_LANG: Lang = 'en';
 export const getI18N = ({
   currentLocale = DEFAULT_LANG
 }: {
-  currentLocale: Lang
+  currentLocale?: string | undefined
 }) => {
   if (currentLocale === LANG.SPANISH) return { ...english, ...spanish }
   return english;

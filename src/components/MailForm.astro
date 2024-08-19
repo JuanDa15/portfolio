@@ -1,7 +1,11 @@
 ---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 import Button from './Button.astro';
 import Input from './Input.astro';
 import Textarea from './Textarea.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <form class='flex flex-col gap-y-8 mt-32'>
@@ -9,6 +13,6 @@ import Textarea from './Textarea.astro';
   <Input id='email' name='email' placeholder='jhon@doe.com' />
   <Textarea id='subject' name='subject' placeholder='Tell me something...' />
   <div class='mt-12'>
-    <Button> Send Request </Button>
+    <Button> {t('btn.send')} </Button>
   </div>
 </form>

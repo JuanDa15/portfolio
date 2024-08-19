@@ -1,1 +1,31 @@
-{}
+{
+  "SEO_TITLE_1": "Portafolio Juan David - Web Developer",
+  "SEO_DESCRIPTION_1": "Portafolio personal de Juan David, desarrollador web",
+  "INTRO_TITLE": "Hola, soy Juan David",
+  "INTRO_BADGET": "Disponible para trabajar",
+  "INTRO_DESCRIPTION_1": "años de experiencia",
+  "INTRO_DESCRIPTION_2": "Desarrollador Front end localizado en Pereira, Colombia",
+  "INTRO_DESCRIPTION_3": "especializado en crear aplicaciones en diferentes front-end frameworks",
+  "EXPERIENCE_TITLE": "Experiencia",
+  "CONTACT_TITLE": "Contacto",
+  "ABOUT_TITLE": "Hola, soy Juan David",
+  "ABOUT_SUBTITLE_1": "Quién soy",
+  "ABOUT_DESCRIPTION_1": "Soy un Desarrollador Web Frontend especializado en crear aplicaciones web escalables y de alto rendimiento. Me apasiona ofrecer experiencias de usuario excepcionales a través de un diseño cuidadoso y soluciones front-end optimizadas.",
+  "ABOUT_SUBTITLE_2": "Educación",
+  "ABOUT_DESCRIPTION_2": "Me gradué con un título en Ingeniería de Sistemas y Computación de la Universidad Tecnológica de Pereira en 2022.",
+  "ABOUT_SUBTITLE_3": "Experiencia",
+  "ABOUT_DESCRIPTION_3": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate atque totam qui sint suscipit officia quis earum velit molestiae, nesciunt accusamus dignissimos eaque vitae ad aliquam maiores, itaque laudantium. Ducimus!",
+  "ABOUT_SUBTITLE_4": "Historial Laboral",
+  "ABOUT_WORK_HISTORY": [
+    {
+      "WORK_TITLE": "Desarrollador Front End - Logical Growth S.A.S",
+      "WORK_DATE": "Enero 2022 - Presente"
+    },
+    {
+      "WORK_TITLE": "Desarrollador Front End - Freelance",
+      "WORK_DATE": "Marzo 2021 - Febrero 2022"
+    }
+  ],
+  "EXPERIENCE_ACHIEVEMENT_SUBTITLE": "Logros",
+  "PROJECTS_TITLE": "Proyectos"
+}

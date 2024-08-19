@@ -3,7 +3,6 @@ import {
   getLangFromUrl,
   useTranslatedPath,
   useTranslations,
-  getRouteFromUrl,
 } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -12,15 +11,15 @@ const tp = useTranslatedPath(lang);
 
 const links = [
   {
-    link: tp('', lang),
+    link: tp('/', lang),
     text: t('nav.home'),
   },
   {
-    link: tp('about', lang),
+    link: tp('/about', lang),
     text: t('nav.about'),
   },
   {
-    link: tp('projects', lang),
+    link: tp('/projects', lang),
     text: t('nav.projects'),
   },
 ];

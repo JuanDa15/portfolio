@@ -1,93 +1,188 @@
-[
-  {
-    "id": 1,
-    "title": "MapBox App - React",
-    "description": "Mapbox gl - library Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
-    "link": "https://svgl.app/",
-    "github": "https: //github.com/JuanDa15/mapbox-app-react",
-    "preview": "/projects/svgl2.webp",
-    "tags": [
-      "NEXT",
-      "TAILWIND"
-    ],
-    "images": []
-  },
-  {
-    "id": 2,
-    "title": "Country finder - Angular",
-    "description": "Rest countries api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
-    "link": "",
-    "github": "https: //github.com/JuanDa15/country-finder-angular",
-    "preview": "/projects/svgl.webp",
-    "tags": [
-      "NEXT",
-      "TAILWIND"
-    ],
-    "images": []
-  },
-  {
-    "id": 3,
-    "title": "Giphy App - Angular",
-    "description": "Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
-    "link": "",
-    "github": "https: //github.com/JuanDa15/graph-app-angular",
-    "preview": "/projects/svgl3.webp",
-    "tags": [
-      "NEXT",
-      "TAILWIND"
-    ],
-    "images": []
-  },
-  {
-    "id": 4,
-    "title": "Mapbox App - Angular",
-    "description": "Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
-    "link": "https://svgl.app",
-    "github": "https: //github.com/JuanDa15/maps-app-angular",
-    "preview": "/projects/svgl4.webp",
-    "tags": [
-      "NEXT",
-      "TAILWIND"
-    ],
-    "images": []
-  },
-  {
-    "id": 5,
-    "title": "Spotify Preview - Angular",
-    "description": "Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
-    "link": "",
-    "github": "https: //github.com/JuanDa15/Spotify-Previews-Angular",
-    "preview": "/projects/svgl2.webp",
-    "tags": [
-      "NEXT",
-      "TAILWIND"
-    ],
-    "images": []
-  },
-  {
-    "id": 6,
-    "title": "Movies App - Angular",
-    "description": "Using the movie DB api api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
-    "link": "",
-    "github": "https: //github.com/JuanDa15/Spotify-Previews-Angular",
-    "preview": "/projects/svgl.webp",
-    "tags": [
-      "NEXT",
-      "TAILWIND"
-    ],
-    "images": []
-  },
-  {
-    "id": 7,
-    "title": "Giphy App - React",
-    "description": "Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
-    "link": "https://svgl.app/",
-    "github": "  https: //github.com/JuanDa15/Gif-App-React",
-    "preview": "/projects/svgl4.webp",
-    "tags": [
-      "NEXT",
-      "TAILWIND"
-    ],
-    "images": []
-  }
-]
+{
+  "en": [
+    {
+      "id": 1,
+      "title": "MapBox App - React",
+      "description": "Mapbox gl - library Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "link": "https://svgl.app/",
+      "github": "https: //github.com/JuanDa15/mapbox-app-react",
+      "preview": "/projects/svgl2.webp",
+      "tags": [
+        "NEXT",
+        "TAILWIND"
+      ],
+      "images": []
+    },
+    {
+      "id": 2,
+      "title": "Country finder - Angular",
+      "description": "Rest countries api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "link": "",
+      "github": "https: //github.com/JuanDa15/country-finder-angular",
+      "preview": "/projects/svgl.webp",
+      "tags": [
+        "NEXT",
+        "TAILWIND"
+      ],
+      "images": []
+    },
+    {
+      "id": 3,
+      "title": "Giphy App - Angular",
+      "description": "Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "link": "",
+      "github": "https: //github.com/JuanDa15/graph-app-angular",
+      "preview": "/projects/svgl3.webp",
+      "tags": [
+        "NEXT",
+        "TAILWIND"
+      ],
+      "images": []
+    },
+    {
+      "id": 4,
+      "title": "Mapbox App - Angular",
+      "description": "Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "link": "https://svgl.app",
+      "github": "https: //github.com/JuanDa15/maps-app-angular",
+      "preview": "/projects/svgl4.webp",
+      "tags": [
+        "NEXT",
+        "TAILWIND"
+      ],
+      "images": []
+    },
+    {
+      "id": 5,
+      "title": "Spotify Preview - Angular",
+      "description": "Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "link": "",
+      "github": "https: //github.com/JuanDa15/Spotify-Previews-Angular",
+      "preview": "/projects/svgl2.webp",
+      "tags": [
+        "NEXT",
+        "TAILWIND"
+      ],
+      "images": []
+    },
+    {
+      "id": 6,
+      "title": "Movies App - Angular",
+      "description": "Using the movie DB api api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "link": "",
+      "github": "https: //github.com/JuanDa15/Spotify-Previews-Angular",
+      "preview": "/projects/svgl.webp",
+      "tags": [
+        "NEXT",
+        "TAILWIND"
+      ],
+      "images": []
+    },
+    {
+      "id": 7,
+      "title": "Giphy App - React",
+      "description": "Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "link": "https://svgl.app/",
+      "github": "  https: //github.com/JuanDa15/Gif-App-React",
+      "preview": "/projects/svgl4.webp",
+      "tags": [
+        "NEXT",
+        "TAILWIND"
+      ],
+      "images": []
+    }
+  ],
+  "es": [
+    {
+      "id": 1,
+      "title": "Aplicación MapBox - React",
+      "description": "Mapbox gl - librería Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "link": "https://svgl.app/",
+      "github": "https://github.com/JuanDa15/mapbox-app-react",
+      "preview": "/projects/svgl2.webp",
+      "tags": [
+        "NEXT",
+        "TAILWIND"
+      ],
+      "images": []
+    },
+    {
+      "id": 2,
+      "title": "Buscador de Países - Angular",
+      "description": "API de países Rest Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "link": "",
+      "github": "https://github.com/JuanDa15/country-finder-angular",
+      "preview": "/projects/svgl.webp",
+      "tags": [
+        "NEXT",
+        "TAILWIND"
+      ],
+      "images": []
+    },
+    {
+      "id": 3,
+      "title": "Aplicación Giphy - Angular",
+      "description": "Usando la API del servicio Giphy Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "link": "",
+      "github": "https://github.com/JuanDa15/graph-app-angular",
+      "preview": "/projects/svgl3.webp",
+      "tags": [
+        "NEXT",
+        "TAILWIND"
+      ],
+      "images": []
+    },
+    {
+      "id": 4,
+      "title": "Aplicación Mapbox - Angular",
+      "description": "Usando la API del servicio Giphy Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "link": "https://svgl.app",
+      "github": "https://github.com/JuanDa15/maps-app-angular",
+      "preview": "/projects/svgl4.webp",
+      "tags": [
+        "NEXT",
+        "TAILWIND"
+      ],
+      "images": []
+    },
+    {
+      "id": 5,
+      "title": "Vista previa de Spotify - Angular",
+      "description": "Usando la API del servicio Giphy Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "link": "",
+      "github": "https://github.com/JuanDa15/Spotify-Previews-Angular",
+      "preview": "/projects/svgl2.webp",
+      "tags": [
+        "NEXT",
+        "TAILWIND"
+      ],
+      "images": []
+    },
+    {
+      "id": 6,
+      "title": "Aplicación de Películas - Angular",
+      "description": "Usando la API de The Movie DB Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "link": "",
+      "github": "https://github.com/JuanDa15/Spotify-Previews-Angular",
+      "preview": "/projects/svgl.webp",
+      "tags": [
+        "NEXT",
+        "TAILWIND"
+      ],
+      "images": []
+    },
+    {
+      "id": 7,
+      "title": "Aplicación Giphy - React",
+      "description": "Usando la API del servicio Giphy Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "link": "https://svgl.app/",
+      "github": "https://github.com/JuanDa15/Gif-App-React",
+      "preview": "/projects/svgl4.webp",
+      "tags": [
+        "NEXT",
+        "TAILWIND"
+      ],
+      "images": []
+    }
+  ]
+}

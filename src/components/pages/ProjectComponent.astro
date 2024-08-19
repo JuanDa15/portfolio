@@ -2,6 +2,8 @@
 import SectionContainer from '@/components/SectionContainer.astro';
 import TechnologyBadget from '@/components/TechnologyBadget.astro';
 import { TAGS } from '@/constants';
+import { getI18N } from '@/i18n';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 import GitHubIcon from '@/icons/GitHubIcon.astro';
 import WorldWWWIcon from '@/icons/WorldWWWIcon.astro';
 import Layout from '@/layouts/Layout.astro';
@@ -10,6 +12,8 @@ import type { TagName } from '@/types';
 
 const { id } = Astro.params;
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const project = await getProjectById(id!);
 ---
 
@@ -85,7 +89,7 @@ const project = await getProjectById(id!);
             rel='noopener noreferrer'
             class='w-fit inline-flex flex-row align-middle gap-4 text-deep-purple transition-colors hover:text-lavender text-sm md:text-base'
           >
-            <WorldWWWIcon class='size-6' /> Visit page
+            <WorldWWWIcon class='size-6' /> {t('btn.page')}
           </a>
         )
       }
@@ -96,7 +100,8 @@ const project = await getProjectById(id!);
         rel='noopener noreferrer'
         class='w-fit inline-flex flex-row align-middle gap-4 text-deep-purple transition-colors hover:text-lavender text-sm md:text-base'
       >
-        <GitHubIcon class='size-6' /> View code
+        <GitHubIcon class='size-6' />
+        {t('btn.code')}
       </a>
     </div>
   </SectionContainer>

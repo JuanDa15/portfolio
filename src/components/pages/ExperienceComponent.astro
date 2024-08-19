@@ -6,10 +6,12 @@ import TechnologyBadget from '@/components/TechnologyBadget.astro';
 import SectionContainer from '@/components/SectionContainer.astro';
 import StarIcon from '@/icons/StarIcon.astro';
 import { getExperience } from '@/services/experience';
+import { getI18N } from '@/i18n';
 
 const { id } = Astro.params;
-
-const experience = await getExperience(id!);
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const experience = await getExperience(id!, currentLocale);
 ---
 
 <Layout title='about' description='...'>
@@ -51,7 +53,7 @@ const experience = await getExperience(id!);
       `
     >
       <StarIcon />
-      Achievements
+      {i18n.EXPERIENCE_ACHIEVEMENT_SUBTITLE}
     </h3>
 
     <hr class='my-4 border-lavender/30' />
