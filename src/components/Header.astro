@@ -5,6 +5,7 @@ import {
   useTranslations,
 } from '../i18n/utils';
 import LanguagePicker from './LanguagePicker.astro';
+import ThemePicker from './ThemePicker.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -61,5 +62,6 @@ console.log(currentPath);
     }
   </nav>
 
+  <ThemePicker />
   <LanguagePicker />
 </header>

@@ -1,0 +1,74 @@
+---
+import ComputerIcon from '@/icons/ComputerIcon.astro';
+import MoonIcon from '@/icons/MoonIcon.astro';
+import SunIcon from '@/icons/SunIcon.astro';
+---
+
+<div>
+  <button data-theme='auto' class='text-gray-800 dark:text-white'>
+    <ComputerIcon />
+  </button>
+  <button data-theme='light'>
+    <SunIcon />
+  </button>
+  <button data-theme='dark'>
+    <MoonIcon />
+  </button>
+</div>
+
+<script>
+  const $ = (selector: string) => document.querySelector(selector);
+  const $$ = (selector: string) => document.querySelectorAll(selector);
+
+  $$('button').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const btnElement = btn as HTMLElement;
+      const { theme = 'dark' } = btnElement.dataset;
+
+      if (theme === 'auto') {
+        $('html')?.removeAttribute('class');
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          $('html')?.classList.add('dark');
+        } else {
+          $('html')?.classList.add('light');
+        }
+      }
+
+      if (theme === 'dark') {
+        $('html')?.classList.contains('light')
+          ? $('html')?.classList.remove('light')
+          : '';
+        $('html')?.classList.add(theme);
+      }
+      if (theme === 'light') {
+        $('html')?.classList.contains('dark')
+          ? $('html')?.classList.remove('dark')
+          : '';
+        $('html')?.classList.add(theme);
+      }
+    });
+  });
+
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', ({ matches }) => {
+      const html = $('html');
+      if (matches) {
+        if (html?.classList.contains('dark')) {
+          return;
+        }
+        if (html?.classList.contains('light')) {
+          html?.classList.remove('light');
+        }
+        html?.classList.add('dark');
+      } else {
+        if (html?.classList.contains('light')) {
+          return;
+        }
+        if (html?.classList.contains('dark')) {
+          html?.classList.remove('dark');
+        }
+        html?.classList.add('light');
+      }
+    });
+</script>
