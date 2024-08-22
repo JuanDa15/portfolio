@@ -24,10 +24,9 @@ const { currentLocale } = Astro;
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class='bg-slate-100 dark:bg-slate-950 overflow-y-auto'>
-    <!-- <div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div> -->
+  <body class='bg-gray-200 dark:bg-black'>
     <Header />
-    <main class='min-h-[calc(100vh-96px-153px)]'>
+    <main class='min-h-[calc(100vh-70px)]'>
       <slot />
     </main>
     <Footer />
@@ -41,22 +40,34 @@ const { currentLocale } = Astro;
       system-ui,
       -apple-system,
       sans-serif;
-    color-scheme: light dark;
+    color-scheme: dark light;
     scroll-behavior: smooth;
-    scrollbar-color: #9b30ff rgb(24, 24, 24);
+    scrollbar-color: #9b30ff rgb(0, 0, 0);
     scrollbar-width: thin;
   }
 
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
   body {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
     min-height: 100vh;
   }
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html {
+      scrollbar-color: #9b30ff rgb(0, 0, 0);
+    }
+  }
+  @media (prefers-color-scheme: light) {
+    html {
+      scrollbar-color: #9b30ff rgb(229, 231, 235);
     }
   }
 </style>

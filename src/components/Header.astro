@@ -25,34 +25,30 @@ const links = [
     text: t('nav.projects'),
   },
 ];
-console.log(currentPath);
 ---
 
 <header
   class={`
-  w-full xl:w-[1120px]
-  flex justify-between items-center gap-x-3
-  py-5 px-3
+    w-full xl:w-[1120px]
+    mx-auto py-4 px-3
+    flex justify-between items-center gap-x-3
 `}
 >
   <nav
-    id='header-links'
     class={`
-      flex
-      flex-row gap-4 md:gap-10 
-      text-xs md:text-sm xl:text-base 
+      flex flex-row gap-4 md:gap-10 
+      text-sm xl:text-base 
+      text-slate-800 dark:text-white
     `}
   >
     {
       links.map(({ link, text }) => (
         <a
           class={`
-            px-2 py-4
-            rounded-md
+            px-2 py-1
             transition-colors
-            hover:bg-electric-purple/10 hover:text-electric-purple
-            active:bg-electric-purple/30 active:text-electric-purple
-            ${link === currentPath ? 'bg-electric-purple/30 text-electric-purple' : ''}
+          hover:text-electric-purple
+            ${link === currentPath ? 'text-electric-purple font-bold underline underline-offset-2' : ''}
           `}
           href={link}
         >
@@ -62,6 +58,8 @@ console.log(currentPath);
     }
   </nav>
 
-  <ThemePicker />
-  <LanguagePicker />
+  <div class='flex flex-col md:flex-row gap-2 items-center'>
+    <LanguagePicker />
+    <ThemePicker />
+  </div>
 </header>

@@ -4,71 +4,82 @@ import MoonIcon from '@/icons/MoonIcon.astro';
 import SunIcon from '@/icons/SunIcon.astro';
 ---
 
-<div>
-  <button data-theme='auto' class='text-gray-800 dark:text-white'>
-    <ComputerIcon />
+<div
+  class='flex flex-row gap-2 items-center border rounded-full p-1 border-gray-400 dark:border-slate-800'
+  '
+>
+  <button
+    data-theme-btn
+    class='p-1 rounded-full text-slate-800 dark:text-white transition-colors hover:bg-gray-400 dark:hover:bg-slate-800'
+    data-theme='system'
+  >
+    <ComputerIcon class='size-4 md:size-5' />
   </button>
-  <button data-theme='light'>
-    <SunIcon />
+  <button
+    data-theme-btn
+    class='p-1 rounded-full text-slate-800 dark:text-white transition-colors hover:bg-gray-400 dark:hover:bg-slate-800'
+    data-theme='light'
+  >
+    <SunIcon class='size-4 md:size-5' />
   </button>
-  <button data-theme='dark'>
-    <MoonIcon />
+  <button
+    data-theme-btn
+    class='p-1 rounded-full text-slate-800 dark:text-white transition-colors hover:bg-gray-400 dark:hover:bg-slate-800'
+    data-theme='dark'
+  >
+    <MoonIcon class='size-4 md:size-5' />
   </button>
 </div>
 
 <script>
-  const $ = (selector: string) => document.querySelector(selector);
-  const $$ = (selector: string) => document.querySelectorAll(selector);
+  import { getSystemTheme } from '@/utils/system-theme';
+  import { $, $$ } from '@/utils/helpers';
 
-  $$('button').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const btnElement = btn as HTMLElement;
-      const { theme = 'dark' } = btnElement.dataset;
+  function clickHandler(ele: HTMLElement | Element) {
+    return () => {
+      const target = ele as HTMLButtonElement;
+      const { theme = 'dark' } = target.dataset;
+      localStorage.setItem('theme', theme);
+      updateRender(theme, target);
+    };
+  }
 
-      if (theme === 'auto') {
-        $('html')?.removeAttribute('class');
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          $('html')?.classList.add('dark');
-        } else {
-          $('html')?.classList.add('light');
-        }
-      }
+  function getThemeToApply(theme: string) {
+    return theme === 'system' ? getSystemTheme() : theme;
+  }
 
-      if (theme === 'dark') {
-        $('html')?.classList.contains('light')
-          ? $('html')?.classList.remove('light')
-          : '';
-        $('html')?.classList.add(theme);
-      }
-      if (theme === 'light') {
-        $('html')?.classList.contains('dark')
-          ? $('html')?.classList.remove('dark')
-          : '';
-        $('html')?.classList.add(theme);
-      }
+  function init() {
+    const theme = localStorage.getItem('theme') ?? 'dark';
+    updateRender(theme, $(`[data-theme=${theme}]`)!);
+  }
+
+  function updateRender(theme: string, btn: HTMLElement | Element) {
+    const activeClasses = ['bg-electric-purple', 'text-white'];
+
+    $$('[data-theme-btn]').forEach((button) => {
+      activeClasses.forEach((className) => {
+        button.classList.contains(className) &&
+          button.classList.remove(className);
+      });
+    });
+    btn.classList.add(...activeClasses);
+
+    $('html')?.setAttribute('class', getThemeToApply(theme));
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    init();
+
+    $$('[data-theme-btn]').forEach((btn) => {
+      const ele = btn as HTMLButtonElement;
+      ele.addEventListener('click', clickHandler(ele));
     });
   });
 
-  window
-    .matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener('change', ({ matches }) => {
-      const html = $('html');
-      if (matches) {
-        if (html?.classList.contains('dark')) {
-          return;
-        }
-        if (html?.classList.contains('light')) {
-          html?.classList.remove('light');
-        }
-        html?.classList.add('dark');
-      } else {
-        if (html?.classList.contains('light')) {
-          return;
-        }
-        if (html?.classList.contains('dark')) {
-          html?.classList.remove('dark');
-        }
-        html?.classList.add('light');
-      }
+  document.addEventListener('astro:before-swap', () => {
+    $$('[data-theme-btn]').forEach((btn) => {
+      const ele = btn as HTMLButtonElement;
+      ele.removeEventListener('click', clickHandler(ele));
     });
+  });
 </script>
