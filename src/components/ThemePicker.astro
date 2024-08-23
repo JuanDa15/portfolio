@@ -10,21 +10,21 @@ import SunIcon from '@/icons/SunIcon.astro';
 >
   <button
     data-theme-btn
-    class='p-1 rounded-full text-slate-800 dark:text-white transition-colors hover:bg-gray-400 dark:hover:bg-slate-800'
+    class='p-1 rounded-full text-slate-800 dark:text-lavender transition-colors hover:bg-gray-400 dark:hover:bg-slate-800'
     data-theme='system'
   >
     <ComputerIcon class='size-4 md:size-5' />
   </button>
   <button
     data-theme-btn
-    class='p-1 rounded-full text-slate-800 dark:text-white transition-colors hover:bg-gray-400 dark:hover:bg-slate-800'
+    class='p-1 rounded-full text-slate-800 dark:text-lavender transition-colors hover:bg-gray-400 dark:hover:bg-slate-800'
     data-theme='light'
   >
     <SunIcon class='size-4 md:size-5' />
   </button>
   <button
     data-theme-btn
-    class='p-1 rounded-full text-slate-800 dark:text-white transition-colors hover:bg-gray-400 dark:hover:bg-slate-800'
+    class='p-1 rounded-full text-slate-800 dark:text-lavender transition-colors hover:bg-gray-400 dark:hover:bg-slate-800'
     data-theme='dark'
   >
     <MoonIcon class='size-4 md:size-5' />
@@ -64,7 +64,11 @@ import SunIcon from '@/icons/SunIcon.astro';
     });
     btn.classList.add(...activeClasses);
 
-    $('html')?.setAttribute('class', getThemeToApply(theme));
+    const html = $('html') as HTMLElement;
+
+    html?.setAttribute('class', getThemeToApply(theme));
+    html.style.scrollbarColor =
+      getThemeToApply(theme) === 'dark' ? '#9b30ff #000000' : '#9b30ff #e5e7eb';
   }
 
   document.addEventListener('astro:page-load', () => {

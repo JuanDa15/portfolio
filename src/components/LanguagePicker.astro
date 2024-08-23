@@ -24,13 +24,12 @@ const tp = useTranslatedPath(lang);
         class={`
           px-2 py-1 
           font-light
-          text-xs md:text-sm  text-slate-800 dark:text-white
+          text-xs md:text-sm  text-slate-800 dark:text-lavender
           transition-colors
           select-none
-          hover:text-white hover:bg-electric-purple/20
-          active:bg-electric-purple
+          hover:text-lavender hover:bg-electric-purple/40 dark:hover:text-lavender dark:hover:bg-electric-purple/20
           rounded-full
-          ${lang === language ? 'bg-electric-purple/90 text-white' : ''}
+          ${lang === language ? 'bg-electric-purple/90 text-lavender' : ''}
         `}
       >
         {language.toLocaleUpperCase()}
