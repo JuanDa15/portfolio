@@ -1,12 +1,17 @@
 <button
   class={`
-    flex items-center justify-center 
-    px-4 py-4 me-3 
-    h-8 
-    text-sm md:text-base font-medium text-electric-purple 
-    rounded-lg  transition-colors
-    hover:bg-electric-purple/10 hover:text-electric-purple 
-    `}
+    inline-flex items-center 
+    px-4 py-2 
+    text-sm font-medium 
+    text-slate-400 dark:text-slate-400 
+    bg-slate-700/5 dark:bg-lavender/5 
+    hover:text-deep-purple hover:border-deep-purple hover:bg-deep-purple/20
+    dark:hover:text-deep-purple dark:hover:border-deep-purple dark:hover:bg-deep-purple/20
+    border border-slate-400 dark:border-gray-600
+    rounded-lg   
+    focus:z-10 focus:ring-4 focus:outline-none focus:ring-electric-purple/20  focus:text-deep-purple
+    transition-colors
+  `}
   {...Astro.props}
 >
   <slot />

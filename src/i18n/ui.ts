@@ -11,7 +11,11 @@ export const ui: Record<Lang, Record<string, string>> = {
     'btn.more': 'See more',
     'btn.page': 'Go to page',
     'btn.code': 'View code',
-    'btn.send': 'Send'
+    'btn.send': 'Send',
+    'validation.required': 'Required field',
+    'validation.email': 'Invalid email address',
+    'validation.minlength': 'Minimum length not met',
+    'validation.maxlength': 'Maximum length exceeded'
   },
   es: {
     'nav.home': 'Inicio',
@@ -21,7 +25,11 @@ export const ui: Record<Lang, Record<string, string>> = {
     'btn.more': 'Ver más',
     'btn.page': 'Ir a la página',
     'btn.code': 'Ver código',
-    'btn.send': 'Enviar'
+    'btn.send': 'Enviar',
+    'validation.required': 'Campo obligatorio',
+    'validation.email': 'Correo electrónico inválido',
+    'validation.minlength': 'Longitud mínima no alcanzada',
+    'validation.maxlength': 'Longitud máxima excedida'
   }
 } as const
 

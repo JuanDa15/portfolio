@@ -6,13 +6,15 @@ const { id, name, ...others } = Astro.props;
   id={id}
   name={name}
   rows='4'
-  {...others}
   class={`
-    block p-2.5 w-full 
-    text-sm text-white 
-    bg-gray-950 placeholder-gray-400
-    rounded-lg border border-gray-600 
-    focus:ring-blue-500 focus:border-blue-500
+    bg-gray-200 dark:bg-black
+    placeholder-gray-500 dark:placeholder-gray-500
+    border rounded-lg border-gray-400 dark:border-gray-700 
+    text-slate-800 dark:text-white text-sm 
+    block w-full p-2.5
+    focus-visible:outline-electric-purple focus-visible:outline focus-visible:outline-2
+    caret-electric-purple
   `}
+  {...others}
 >
 </textarea>

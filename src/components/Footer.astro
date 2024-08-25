@@ -4,6 +4,8 @@ import {
   useTranslatedPath,
   useTranslations,
 } from '@/i18n/utils';
+import ThemePicker from './ThemePicker.astro';
+import LanguagePicker from './LanguagePicker.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -11,16 +13,18 @@ const tp = useTranslatedPath(lang);
 ---
 
 <footer class='w-full'>
-  <hr class='border-lavender my-2 opacity-35' />
+  <hr class='border-gray-800/40 dark:border-lavender my-2 opacity-30' />
   <div class='w-full max-w-screen-xl mx-auto p-4 md:py-8'>
     <div
       class='max-w-[740px] lg:w-[740px] mx-auto flex items-center justify-center mb-4'
     >
-      <ul class='flex flex-wrap items-center text-sm font-medium text-white/60'>
+      <ul
+        class='flex flex-wrap items-center text-sm font-medium text-slate-800/60 dark:text-lavender/60'
+      >
         <li>
           <a
             href={`${tp('', lang)}#top`}
-            class='hover:underline hover:text-electric-purple transition-colors me-4 md:me-6'
+            class='hover:underline hover:text-electric-purple transition-colors me-4 md:me-6 hover:font-bold'
             >{t('nav.home')}</a
           >
         </li>
@@ -40,7 +44,9 @@ const tp = useTranslatedPath(lang);
         </li>
       </ul>
     </div>
-    <span class='block text-sm text-center text-white/40'>
+    <span
+      class='block text-sm text-center text-slate-800/60 dark:text-lavender/60'
+    >
       © 2024
       <a
         target='_blank'

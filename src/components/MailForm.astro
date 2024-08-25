@@ -8,11 +8,126 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<form class='flex flex-col gap-y-8 mt-32'>
-  <Input id='name' name='name' placeholder='Jhon Doe' />
-  <Input id='email' name='email' placeholder='jhon@doe.com' />
-  <Textarea id='subject' name='subject' placeholder='Tell me something...' />
-  <div class='mt-12'>
-    <Button> {t('btn.send')} </Button>
+<form class='group flex flex-col gap-y-4 mt-32'>
+  <Input
+    type='text'
+    id='name'
+    name='name'
+    placeholder='Jhon Doe'
+    required
+    minlength='4'
+  />
+  <Input
+    type='email'
+    id='email'
+    name='email'
+    pattern='[^@\s]+@[^@\s]+\.[^@\s]+'
+    placeholder='jhon@doe.com'
+    required
+  />
+  <Textarea
+    id='subject'
+    name='subject'
+    placeholder='Tell me something...'
+    required
+    minlength='20'
+  />
+  <div class='text-center'>
+    <Button type='submit'> {t('btn.send')} </Button>
   </div>
 </form>
+
+<script>
+  import { $, $$ } from '@/utils/helpers';
+  import { useTranslations } from '@/i18n/utils';
+
+  function validityMessage(element: HTMLInputElement | HTMLTextAreaElement) {
+    const lang = ($('html')?.getAttribute('lang') ?? 'en') as 'en' | 'es';
+    const t = useTranslations(lang);
+    if (element.validity.valueMissing) {
+      element.setCustomValidity(t('validation.required'));
+    } else if (element.validity.tooShort) {
+      element.setCustomValidity(t('validation.minlength'));
+    } else if (element.validity.tooLong) {
+      element.setCustomValidity(t('validation.maxlength'));
+    } else if (element.validity.patternMismatch) {
+      element.setCustomValidity(t('validation.email'));
+    } else {
+      element.setCustomValidity('');
+    }
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    const form = $('form') as HTMLFormElement;
+    const inputs = $$('input') as NodeListOf<HTMLInputElement>;
+    const textarea = $('textarea') as HTMLTextAreaElement;
+
+    const formInputs = [...Array.from(inputs), textarea];
+
+    formInputs.forEach((input) => {
+      input.addEventListener('invalid', () => {
+        validityMessage(input);
+      });
+    });
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      form.setAttribute('data-submitted', 'true');
+      const formData = new FormData(e.target as HTMLFormElement);
+
+      let { name, email, subject } = Object.fromEntries(formData);
+      name = name.toString();
+      email = email.toString();
+      subject = subject.toString();
+
+      const nameRegex = /^.{4,}$/;
+      const subjectRegex = /^.{20,}$/;
+      const emailRegex = /[^@\s]+@[^@\s]+\.[^@\s]+/;
+
+      if (name.length === 0 || email.length === 0 || subject.length === 0) {
+        return formInputs.forEach((ele) => {
+          ele.setAttribute('required', '');
+        });
+      }
+
+      if (!nameRegex.test(name)) {
+        return $(`[name=name]`)?.setAttribute('minlength', '4');
+      }
+      if (!subjectRegex.test(subject)) {
+        return $(`[name=subject]`)?.setAttribute('minlength', '20');
+      }
+      if (!emailRegex.test(email)) {
+        return $(`[name=email]`)?.setAttribute(
+          'pattern',
+          '[^@s]+@[^@s]+.[^@s]+'
+        );
+      }
+
+      const params = new URLSearchParams();
+      params.append('name', name);
+      params.append('subject', subject);
+      params.append('email', email);
+      try {
+        const response = await fetch(`/api/send-email?${params.toString()}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        const result = await response.json();
+
+        // if (!response.ok) {
+        //   console.error('Error sending email:', result.error);
+        //   alert('Failed to send email. Please try again later.');
+        // } else {
+        //   alert('Email sent successfully!');
+        //   form.reset();
+        // }
+      } catch (error) {
+        console.error('Unexpected error:', error);
+        alert('An unexpected error occurred. Please try again later.');
+      }
+    });
+  });
+</script>

@@ -19,7 +19,9 @@ const project = await getProjectById(id!);
 
 <Layout title={`Project ${id}`} description='...'>
   <SectionContainer class='p-3' id='project-content'>
-    <h1 class='text-center text-2xl md:text-3xl lg:text-4xl mb-6 md:mb-10'>
+    <h1
+      class='text-center text-2xl md:text-3xl lg:text-4xl mb-6 md:mb-10 text-slate-800 dark:text-lavender'
+    >
       {project?.title}
     </h1>
     <ul class='my-6 flex flex-row flex-wrap gap-2 lg:gap-3'>
@@ -36,7 +38,9 @@ const project = await getProjectById(id!);
     </ul>
 
     <div class='flex flex-col gap-8 md:flex-row mb-8'>
-      <p class='text-sm md:text-base text-pretty'>
+      <p
+        class='text-sm md:text-base text-pretty text-slate-800 dark:text-lavender'
+      >
         {project?.description}
       </p>
       <div class='grid grid-cols-2 gap-2 md:max-w-[500px]'>
@@ -87,7 +91,7 @@ const project = await getProjectById(id!);
             target='_blank'
             referrerpolicy='no-referrer'
             rel='noopener noreferrer'
-            class='w-fit inline-flex flex-row align-middle gap-4 text-deep-purple transition-colors hover:text-lavender text-sm md:text-base'
+            class='w-fit inline-flex flex-row align-middle gap-4 text-deep-purple transition-colors hover:text-electric-purple dark:hover:text-lavender text-sm md:text-base'
           >
             <WorldWWWIcon class='size-6' /> {t('btn.page')}
           </a>
@@ -98,7 +102,7 @@ const project = await getProjectById(id!);
         target='_blank'
         referrerpolicy='no-referrer'
         rel='noopener noreferrer'
-        class='w-fit inline-flex flex-row align-middle gap-4 text-deep-purple transition-colors hover:text-lavender text-sm md:text-base'
+        class='w-fit inline-flex flex-row align-middle gap-4 text-deep-purple transition-colors hover:text-electric-purple dark:hover:text-lavender text-sm md:text-base'
       >
         <GitHubIcon class='size-6' />
         {t('btn.code')}
