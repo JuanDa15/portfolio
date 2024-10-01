@@ -2,8 +2,7 @@ import { DEFAULT_LANG, type Lang } from ".";
 import { routes, showDefaultLang, ui } from "./ui"
 
 export const getLangFromUrl = (url: URL) => {
-  const [, lang] = url.pathname.split('/')
-
+  const [, , lang] = url.pathname.split('/')
   if (lang in ui) return lang as Lang;
   return DEFAULT_LANG;
 }
@@ -21,12 +20,13 @@ export function useTranslatedPath(lang: Lang) {
       DEFAULT_LANG !== l &&
       (routes[l as Lang] as Record<string, string>) !== undefined &&
       ((routes[l as Lang] as Record<string, string>)[pathName]) !== undefined;
-    const translatedPath = hasTranslation
-      ? '/' + (routes[l as Lang] as Record<string, string>)[pathName]
-      : path
+    const tp = hasTranslation
+      ? (routes[l as Lang] as Record<string, string>)[pathName]
+      : path.replace('/', '');
+    console.log(tp, 'tp')
     return !showDefaultLang && l === DEFAULT_LANG
-      ? `${translatedPath}`
-      : `/${l}${translatedPath}`
+      ? `/portfolio/${tp}`
+      : `/portfolio/${l}/${tp}`
   }
 }
 

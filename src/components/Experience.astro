@@ -2,7 +2,8 @@
 import { getAllExperience } from '../services/experience';
 import ExperienceItem from './ExperienceItem.astro';
 
-const EXPERIENCE = await getAllExperience();
+const { currentLocale } = Astro;
+const EXPERIENCE = await getAllExperience(currentLocale);
 ---
 
 <ol
