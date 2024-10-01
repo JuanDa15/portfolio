@@ -1,23 +1,16 @@
 ---
 import SectionContainer from '@/components/SectionContainer.astro';
-import TechnologyBadget from '@/components/TechnologyBadget.astro';
-import { TAGS } from '@/constants';
 import CodeIcon from '@/icons/CodeIcon.astro';
 import Layout from '@/layouts/Layout.astro';
 import { getAllProjects } from '@/services/projects';
-import type { IProject, TagName } from '@/types';
-import { convertToMasonryFormat } from '@/utils/masonry';
-import ArrowRightIcon from '@/icons/ArrowRightIcons.astro';
 import { getI18N } from '@/i18n';
 import {
   getLangFromUrl,
-  useTranslatedPath,
-  useTranslations,
+  useTranslatedPath
 } from '@/i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const i18n = getI18N({ currentLocale: lang });
-const t = useTranslations(lang);
 const tp = useTranslatedPath(lang);
 let PROJECTS =  await getAllProjects(lang)
 ---

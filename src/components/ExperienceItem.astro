@@ -72,7 +72,7 @@ const { title, description, date, company, tags, id } = Astro.props;
   <div class='mb-4 flex flex-row gap-x-2 gap-y-1 flex-wrap'>
     {
       tags.map((tag) => {
-        const { class: className, id, name, icon: Icon } = TAGS[tag];
+        const { class: className, name, icon: Icon } = TAGS[tag];
 
         return (
           <TechnologyBadget class={`${className} text-xs`}>
