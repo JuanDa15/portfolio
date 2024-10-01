@@ -1,0 +1,96 @@
+{
+  "en": [
+    {
+      "id": 1,
+      "title": "Frontend Developer",
+      "company": "Logical Growth S.A.S - Fianly",
+      "date": "January 2022 - Present",
+      "description": "Developed and maintained user interfaces for various web applications using Angular and React/Next.js. Collaborated with the design team to ensure seamless user experiences. Additionally, developed new products and features for different projects, ensuring optimal performance and continuous optimization.",
+      "tags": [
+        "ANGULAR",
+        "NEXT",
+        "REACT",
+        "FIGMA",
+        "GITHUB",
+        "AWS"
+      ],
+      "achievements": [
+        "Develop a unified platform of components and tools for the company's various products, technically converging and accelerating product delivery.",
+        "Led the improvement of web performance for the company's products.",
+        "Provided innovative solutions by implementing a technique in Angular that structures each component as an independent module, increasing code granularity and optimizing JavaScript loading by the browser when navigating between pages, reducing web load times.",
+        "Optimized SEO, achieving significant improvements in Google metrics through strategic decision-making, such as selecting the right technology to meet objectives.",
+        "Developed several internal projects, establishing system foundations, including session management, notifications, and the overall structure of each project.",
+        "Develop and maintain various projects in Angular and Next.js.",
+        "Collaborated closely with various departments in planning new features for different platforms, from gathering requirements and creating user stories and mockups to development.",
+        "Provided guidance and support to team members in resolving development-related issues.",
+        "Reviewed and optimized existing code, ensuring its efficiency and alignment with the company's quality standards.",
+        "Managed technical debt by migrating the project from Angular 8 to Angular 13, optimizing and refactoring the legacy code of various platform modules, achieving a significant reduction in the application's bundle size."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Frontend Developer",
+      "company": "Freelance",
+      "date": "March 2021 - February 2022",
+      "description": "Designed and implemented customized solutions for clients with specific needs, using various frontend technologies such as Angular and React.",
+      "tags": [
+        "ANGULAR",
+        "REACT",
+        "FIGMA",
+        "GITHUB"
+      ],
+      "achievements": [
+        "Developed full-fledged web applications using technologies such as HTML, CSS, JavaScript, and Angular, creating robust and scalable solutions.",
+        "Integrated third-party APIs to add dynamic functionalities on the front end, enhancing the interactivity and responsiveness of the applications.",
+        "Performed bug fixes, addressing technical issues and ensuring that applications and websites functioned smoothly."
+      ]
+    }
+  ],
+  "es": [
+    {
+      "id": 1,
+      "title": "Desarrollador Frontend",
+      "company": "Logical Growth S.A.S - Fianly",
+      "date": "Enero 2022 - Presente",
+      "description": "Desarrollé y mantuve interfaces de usuario para diversas aplicaciones web utilizando Angular y React/Next.js. Colaboré con el equipo de diseño para garantizar experiencias de usuario sin problemas. Además, desarrollé nuevos productos y características para diferentes proyectos, asegurando un rendimiento óptimo y una optimización continua.",
+      "tags": [
+        "ANGULAR",
+        "NEXT",
+        "REACT",
+        "FIGMA",
+        "GITHUB",
+        "AWS"
+      ],
+      "achievements": [
+        "Desarrollé una plataforma unificada de componentes y herramientas para los diversos productos de la empresa, convergiendo técnicamente y acelerando la entrega de productos.",
+        "Lideré la mejora del rendimiento web de los productos de la empresa.",
+        "Proporcioné soluciones innovadoras implementando una técnica en Angular que estructura cada componente como un módulo independiente, aumentando la granularidad del código y optimizando la carga de JavaScript por parte del navegador al navegar entre páginas, reduciendo los tiempos de carga web.",
+        "Optimizé el SEO, logrando mejoras significativas en los indicadores de Google a través de decisiones estratégicas, como la selección de la tecnología adecuada para cumplir con los objetivos.",
+        "Desarrollé varios proyectos internos, estableciendo los fundamentos del sistema, incluyendo la gestión de sesiones, notificaciones y la estructura general de cada proyecto.",
+        "Desarrollé y mantuve varios proyectos en Angular y Next.js.",
+        "Colaboré estrechamente con varios departamentos en la planificación de nuevas características para diferentes plataformas, desde la recopilación de requisitos y la creación de historias de usuario y maquetas hasta el desarrollo.",
+        "Proporcioné orientación y apoyo a los miembros del equipo en la resolución de problemas relacionados con el desarrollo.",
+        "Revisé y optimicé el código existente, asegurando su eficiencia y alineación con los estándares de calidad de la empresa.",
+        "Gestioné la deuda técnica al migrar el proyecto de Angular 8 a Angular 13, optimizando y refactorizando el código heredado de varios módulos de la plataforma, logrando una reducción significativa en el tamaño del paquete de la aplicación."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Desarrollador Frontend",
+      "company": "Freelance",
+      "date": "Marzo 2021 - Febrero 2022",
+      "description": "Diseñé e implementé soluciones personalizadas para clientes con necesidades específicas, utilizando diversas tecnologías frontend como Angular y React.",
+      "tags": [
+        "ANGULAR",
+        "REACT",
+        "FIGMA",
+        "GITHUB"
+      ],
+      "achievements": [
+        "Desarrollé aplicaciones web completas utilizando tecnologías como HTML, CSS, JavaScript y Angular, creando soluciones robustas y escalables.",
+        "Integré API de terceros para agregar funcionalidades dinámicas en el front-end, mejorando la interactividad y la capacidad de respuesta de las aplicaciones.",
+        "Realicé correcciones de errores, abordando problemas técnicos y asegurando que las aplicaciones y sitios web funcionaran sin problemas."
+      ]
+    }
+  ]
+}
