@@ -1,8 +1,8 @@
 import type { IExperience } from "../types"
+import experienceData from 'public/data/experience.json';
 
 export async function getAllExperience(locale: string | undefined = 'en') {
-  const resp = await fetch(`https://github.com/JuanDa15/portfolio/data/experience.json`)
-  const data = await resp.json()
+  const data: Record<string, any> = experienceData;
   return data[locale] as IExperience[]
 }
 

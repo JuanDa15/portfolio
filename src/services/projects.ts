@@ -1,8 +1,8 @@
 import type { IProject } from "../types"
+import projectsData from 'public/data/projects.json';
 
 export async function getAllProjects(locale: string = 'es') {
-  const resp = await fetch('https://github.com/JuanDa15/portfolio/data/projects.json')
-  const data = await resp.json()
+  const data: Record<string, any> = projectsData;
   return data[locale] as IProject[]
 }
 
