@@ -18,14 +18,15 @@ const experience = await getExperience(id!, currentLocale);
   <SectionContainer class='p-3'>
     <h1
       class='text-3xl font-black lg:text-4xl text-slate-800 dark:text-lavender'
+      transition:name={`experience-title-${id}`}
     >
       {experience?.title}
     </h1>
     <div class='flex flex-col md:flex-row md:justify-between'>
-      <h2 class='text-lg text-slate-800/80 dark:text-lavender/80 md:text-xl'>
+      <h2 class='text-lg text-slate-800/80 dark:text-lavender/80 md:text-xl'  transition:name={`experience-company-${id}`}>
         {experience?.company}
       </h2>
-      <small class='text-slate-800/60 dark:text-lavender/60'
+      <small class='text-slate-800/60 dark:text-lavender/60'  transition:name={`experience-date-${id}`}
         >{experience?.date}</small
       >
     </div>

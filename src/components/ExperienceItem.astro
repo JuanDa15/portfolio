@@ -40,6 +40,7 @@ const { title, description, date, company, tags, id } = Astro.props;
       text-xs md:text-sm font-normal leading-none 
      text-slate-800/60 dark:text-lavender/60
     `}
+     transition:name={`experience-date-${id}`}
   >
     {date}
   </time>
@@ -47,6 +48,7 @@ const { title, description, date, company, tags, id } = Astro.props;
     class={`
       text-base md:text-xl font-bold text-electric-purple
     `}
+    transition:name={`experience-title-${id}`}
   >
     {title}
   </h3>
@@ -54,6 +56,7 @@ const { title, description, date, company, tags, id } = Astro.props;
     class={`
       text-sm md:text-base font-semibold text-slate-800/50 dark:text-lavender/80
     `}
+    transition:name={`experience-company-${id}`}
   >
     {company}
   </h2>

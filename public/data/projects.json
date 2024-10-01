@@ -2,24 +2,25 @@
   "en": [
     {
       "id": 1,
-      "title": "MapBox App - React",
-      "description": "Mapbox gl - library Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
-      "link": "https://svgl.app/",
-      "github": "https: //github.com/JuanDa15/mapbox-app-react",
-      "preview": "/projects/svgl2.webp",
+      "title": "LunaUi",
+      "description": "LunaUi es una librería de componentes en Angular, creada para construir interfaces de usuario modernas y accesibles con facilidad y consistencia.",
+      "long_description": "LunaUi es una librería de componentes desarrollada en Angular, diseñada para proporcionar una colección de componentes reutilizables y accesibles que permiten a los desarrolladores crear interfaces de usuario modernas y altamente personalizables. Cada componente de LunaUi está optimizado para el rendimiento y diseñado para ofrecer una experiencia consistente en diversas plataformas. Con un enfoque en la accesibilidad y la flexibilidad, LunaUi es ideal para proyectos que requieren componentes robustos y visualmente atractivos.",
+      "link": "https://juanda15.github.io/lunaui-angular/",
+      "github": "https://github.com/JuanDa15/lunaui-angular",
+      "preview": "",
       "tags": [
-        "NEXT",
-        "TAILWIND"
+        "ANGULAR"
       ],
       "images": []
     },
     {
       "id": 2,
-      "title": "Country finder - Angular",
-      "description": "Rest countries api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "title": "MapNavigator",
+      "description": "A React app with Mapbox and Tailwind CSS for place searches and route tracing. Simple, fast, and responsive.",
+      "long_description": "MapNavigator is a web application built with React and styled using Tailwind CSS, which leverages the power of Mapbox to provide an interactive and user-friendly map experience. The app allows users to search for specific places, view detailed map data, and trace routes between locations. With seamless integration of Mapbox's dynamic features, users can explore locations, get directions, and visualize paths, making it perfect for planning trips or exploring new areas. The clean, responsive design powered by Tailwind ensures a great experience across all devices.",
       "link": "",
-      "github": "https: //github.com/JuanDa15/country-finder-angular",
-      "preview": "/projects/svgl.webp",
+      "github": "https: //github.com/JuanDa15/mapbox-app-react",
+      "preview": "",
       "tags": [
         "NEXT",
         "TAILWIND"
@@ -28,66 +29,14 @@
     },
     {
       "id": 3,
-      "title": "Giphy App - Angular",
-      "description": "Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "title": "CountryExplorer",
+      "description": "An Angular app using the REST Countries API to search and explore country information quickly and easily.",
+      "long_description": "CountryExplorer is an Angular-based application that integrates with the REST Countries API to allow users to search for and explore information about different countries. The app provides detailed data such as population, region, capital, and more, offering a seamless experience with an intuitive interface. Built with Angular, it ensures fast and responsive performance, making it easy to find and learn about countries around the world.",
       "link": "",
-      "github": "https: //github.com/JuanDa15/graph-app-angular",
-      "preview": "/projects/svgl3.webp",
+      "github": "https: //github.com/JuanDa15/country-finder-angular",
+      "preview": "",
       "tags": [
-        "NEXT",
-        "TAILWIND"
-      ],
-      "images": []
-    },
-    {
-      "id": 4,
-      "title": "Mapbox App - Angular",
-      "description": "Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
-      "link": "https://svgl.app",
-      "github": "https: //github.com/JuanDa15/maps-app-angular",
-      "preview": "/projects/svgl4.webp",
-      "tags": [
-        "NEXT",
-        "TAILWIND"
-      ],
-      "images": []
-    },
-    {
-      "id": 5,
-      "title": "Spotify Preview - Angular",
-      "description": "Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
-      "link": "",
-      "github": "https: //github.com/JuanDa15/Spotify-Previews-Angular",
-      "preview": "/projects/svgl2.webp",
-      "tags": [
-        "NEXT",
-        "TAILWIND"
-      ],
-      "images": []
-    },
-    {
-      "id": 6,
-      "title": "Movies App - Angular",
-      "description": "Using the movie DB api api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
-      "link": "",
-      "github": "https: //github.com/JuanDa15/Spotify-Previews-Angular",
-      "preview": "/projects/svgl.webp",
-      "tags": [
-        "NEXT",
-        "TAILWIND"
-      ],
-      "images": []
-    },
-    {
-      "id": 7,
-      "title": "Giphy App - React",
-      "description": "Using giphy service api Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
-      "link": "https://svgl.app/",
-      "github": "  https: //github.com/JuanDa15/Gif-App-React",
-      "preview": "/projects/svgl4.webp",
-      "tags": [
-        "NEXT",
-        "TAILWIND"
+        "ANGULAR"
       ],
       "images": []
     }
@@ -95,24 +44,25 @@
   "es": [
     {
       "id": 1,
-      "title": "Aplicación MapBox - React",
-      "description": "Mapbox gl - librería Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
-      "link": "https://svgl.app/",
-      "github": "https://github.com/JuanDa15/mapbox-app-react",
-      "preview": "/projects/svgl2.webp",
+      "title": "LunaUi",
+      "description": "LunaUi es una librería de componentes en Angular, creada para construir interfaces de usuario modernas y accesibles con facilidad y consistencia.",
+      "long_description": "LunaUi es una librería de componentes desarrollada en Angular, diseñada para proporcionar una colección de componentes reutilizables y accesibles que permiten a los desarrolladores crear interfaces de usuario modernas y altamente personalizables. Cada componente de LunaUi está optimizado para el rendimiento y diseñado para ofrecer una experiencia consistente en diversas plataformas. Con un enfoque en la accesibilidad y la flexibilidad, LunaUi es ideal para proyectos que requieren componentes robustos y visualmente atractivos.",
+      "link": "https://juanda15.github.io/lunaui-angular/",
+      "github": "https://github.com/JuanDa15/lunaui-angular",
+      "preview": "",
       "tags": [
-        "NEXT",
-        "TAILWIND"
+        "ANGULAR"
       ],
       "images": []
     },
     {
       "id": 2,
-      "title": "Buscador de Países - Angular",
-      "description": "API de países Rest Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "title": "MapNavigator",
+      "description": "Una app en React con Mapbox y Tailwind CSS para buscar lugares y trazar rutas. Sencilla, rápida y adaptable.",
+      "long_description": "MapNavigator es una aplicación web construida con React y Tailwind CSS, que utiliza Mapbox para ofrecer una experiencia de mapa interactiva y fácil de usar. Permite a los usuarios buscar lugares, ver datos detallados del mapa y trazar rutas entre ubicaciones. Con una integración fluida de las características dinámicas de Mapbox, los usuarios pueden explorar ubicaciones, obtener direcciones y visualizar trayectos, ideal para planificar viajes o explorar nuevas áreas.",
       "link": "",
-      "github": "https://github.com/JuanDa15/country-finder-angular",
-      "preview": "/projects/svgl.webp",
+      "github": "https://github.com/JuanDa15/mapbox-app-react",
+      "preview": "",
       "tags": [
         "NEXT",
         "TAILWIND"
@@ -121,66 +71,14 @@
     },
     {
       "id": 3,
-      "title": "Aplicación Giphy - Angular",
-      "description": "Usando la API del servicio Giphy Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
+      "title": "CountryExplorer",
+      "description": "Una app en Angular que utiliza la API de REST Countries para buscar y explorar información de países de manera rápida y sencilla.",
+      "long_description": "CountryExplorer es una aplicación desarrollada en Angular que utiliza la API de REST Countries para permitir a los usuarios buscar y explorar información sobre diferentes países. La app proporciona datos detallados como población, región, capital y más, ofreciendo una experiencia fluida con una interfaz intuitiva. Construida en Angular, garantiza un rendimiento rápido y una navegación responsiva, facilitando la búsqueda y el aprendizaje sobre países de todo el mundo.",
       "link": "",
-      "github": "https://github.com/JuanDa15/graph-app-angular",
-      "preview": "/projects/svgl3.webp",
+      "github": "https://github.com/JuanDa15/country-finder-angular",
+      "preview": "",
       "tags": [
-        "NEXT",
-        "TAILWIND"
-      ],
-      "images": []
-    },
-    {
-      "id": 4,
-      "title": "Aplicación Mapbox - Angular",
-      "description": "Usando la API del servicio Giphy Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
-      "link": "https://svgl.app",
-      "github": "https://github.com/JuanDa15/maps-app-angular",
-      "preview": "/projects/svgl4.webp",
-      "tags": [
-        "NEXT",
-        "TAILWIND"
-      ],
-      "images": []
-    },
-    {
-      "id": 5,
-      "title": "Vista previa de Spotify - Angular",
-      "description": "Usando la API del servicio Giphy Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
-      "link": "",
-      "github": "https://github.com/JuanDa15/Spotify-Previews-Angular",
-      "preview": "/projects/svgl2.webp",
-      "tags": [
-        "NEXT",
-        "TAILWIND"
-      ],
-      "images": []
-    },
-    {
-      "id": 6,
-      "title": "Aplicación de Películas - Angular",
-      "description": "Usando la API de The Movie DB Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
-      "link": "",
-      "github": "https://github.com/JuanDa15/Spotify-Previews-Angular",
-      "preview": "/projects/svgl.webp",
-      "tags": [
-        "NEXT",
-        "TAILWIND"
-      ],
-      "images": []
-    },
-    {
-      "id": 7,
-      "title": "Aplicación Giphy - React",
-      "description": "Usando la API del servicio Giphy Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae qui cupiditate numquam eos vero distinctio suscipit delectus! Odit quasi, qui totam voluptates unde ducimus quibusdam voluptatibus blanditiis nam eligendi doloremque!",
-      "link": "https://svgl.app/",
-      "github": "https://github.com/JuanDa15/Gif-App-React",
-      "preview": "/projects/svgl4.webp",
-      "tags": [
-        "NEXT",
-        "TAILWIND"
+        "ANGULAR"
       ],
       "images": []
     }

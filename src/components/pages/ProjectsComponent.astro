@@ -19,17 +19,14 @@ const lang = getLangFromUrl(Astro.url);
 const i18n = getI18N({ currentLocale: lang });
 const t = useTranslations(lang);
 const tp = useTranslatedPath(lang);
-let PROJECTS = convertToMasonryFormat<IProject>({
-  columns: 2,
-  data: await getAllProjects(lang),
-});
+let PROJECTS =  await getAllProjects(lang)
 ---
 
 <Layout title='projects' description='...'>
-  <SectionContainer class='mt-10 mb-10' id='projects'>
+  <SectionContainer class='mt-10 mb-10 max-w-[948px] lg:w-[948px]' id='projects'>
     <h2
       class={`
-        text-2xl md:text-4xl lg:text-5xl font-semibold 
+        text-2xl md:text-4xl lg:text-5xl font-medium 
         mb-6 md:mb-10 
         flex gap-x-4 items-center justify-center
         text-slate-800 dark:text-lavender
@@ -38,63 +35,18 @@ let PROJECTS = convertToMasonryFormat<IProject>({
       <CodeIcon class='w-6 h-6' />
       {i18n.PROJECTS_TITLE}
     </h2>
-    <div class={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 p-6`}>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {
         PROJECTS.map((item) => (
-          <div class='grid gap-4'>
-            {item.map((project) => (
-              <div class='relative overflow-hidden rounded-lg group'>
-                <img
-                  class='h-full max-w-full rounded-lg [&:hover > div]: translate-x-0 blur-none  group-hover:blur-sm'
-                  src={project.preview}
-                  alt={project.title}
-                />
-                <div
-                  class={`
-                    h-full w-full 
-                  bg-lavender/50 dark:bg-black/70 
-                    absolute top-0 left-0 
-                    p-4
-                    transform -translate-x-full transition-transform duration-300 group-hover:translate-x-0
-                    flex flex-col
-                  `}
-                >
-                  <p class='inline-block text-xl md:text-2xl font-black text-slate-800 dark:text-lavender'>
-                    {project.title}
-                  </p>
-
-                  <ul class='my-16 flex flex-row flex-wrap gap-2 lg:gap-3'>
-                    {project?.tags.map((tag: TagName) => {
-                      const { class: className, name, icon: Icon } = TAGS[tag];
-                      return (
-                        <TechnologyBadget class={`${className} text-xs`}>
-                          <Icon class={`size-5 md:size-6`} /> {name}
-                        </TechnologyBadget>
-                      );
-                    })}
-                  </ul>
-                  <div class='flex-auto' />
-                  <a
-                    href={`${tp('/projects')}/${project.id}`}
-                    class={`
-                        w-full
-                        inline-flex items-center 
-                        px-4 py-2 
-                        text-sm font-medium text-slate-600 dark:text-gray-400 
-                        bg-slate-400/20 dark:bg-black/20 hover:text-deep-purple hover:border-deep-purple hover:bg-deep-purple/20
-                        border border-gray-400 dark:border-gray-600
-                        rounded-lg   
-                        focus:z-10 focus:ring-4 focus:outline-none focus:ring-electric-purple/20  focus:text-deep-purple
-                        transition-colors
-                        cursor-pointer
-                      `}
-                  >
-                    {t('btn.more')} <ArrowRightIcon class='ml-auto' />
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
+          <a href={`${tp('/projects')}/${item.id}`} class="bg-neutral-100 dark:bg-neutral-900/20 rounded-lg overflow-hidden shadow-lg cursor-pointer transform transition duration-300 hover:scale-105 hover:shadow-xl">
+            <div class="h-48">
+              <img src="/projects/placeholder.svg" class="w-full h-full object-cover" alt={item.title}/>
+            </div>
+            <div class="p-4">
+              <h2 class="text-xl font-semibold mb-2" transition:name={`project-title-${item.id}`}>{item.title}</h2>
+              <p class="text-gray-600">{item.description}</p>
+            </div>
+          </a>
         ))
       }
     </div>

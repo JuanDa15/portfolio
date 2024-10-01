@@ -15,6 +15,7 @@ export interface IProject {
   id: number;
   title: string;
   description: string;
+  long_description: string;
   link?: string;
   github: string;
   preview: string;
