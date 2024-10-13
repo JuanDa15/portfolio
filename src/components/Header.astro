@@ -11,6 +11,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const tp = useTranslatedPath(lang);
 const currentPath = Astro.url.pathname;
+
 const links = [
   {
     link: tp('/', lang),
