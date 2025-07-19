@@ -11,6 +11,7 @@ import Briefcase from '@/icons/BriefcaseIcon.astro';
 import MailIcon from '@/icons/MailIcon.astro';
 import Profile from '@/components/Profile.astro';
 import { getI18N } from '@/i18n';
+import { calculateExperience } from '@/utils/experience';
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
@@ -20,22 +21,12 @@ const links = {
   gitHub: 'https://github.com/JuanDa15/',
   mail: 'mailto:jdoo1115@gmail.com',
 };
-
-const calculateExperience = () => {
-  const initialDate = new Date('01-01-2022');
-  const today = new Date();
-
-  const yearsDiff = today.getFullYear() - initialDate.getFullYear();
-  const monthsDiff = today.getMonth() - initialDate.getMonth();
-
-  return Math.ceil(Number(`${yearsDiff}.${monthsDiff}`));
-};
 ---
 
 <Layout title={i18n.SEO_TITLE_1} description={i18n.SEO_DESCRIPTION_1}>
   <main class='px-4'>
     <SectionContainer class='flex flex-col min-h-[calc(100vh-207px)]' id='top'>
-      <div class='my-auto'>
+      <div class='my-auto py-4'>
         <Profile />
         <h1
           class={`
@@ -46,14 +37,6 @@ const calculateExperience = () => {
         `}
         >
           {i18n.INTRO_TITLE}
-          <a
-            class='flex align-center'
-            href={links.linkedIn}
-            target='_blank'
-            referrerpolicy='no-referrer'
-          >
-            <Badget>{i18n.INTRO_BADGET}</Badget>
-          </a>
         </h1>
         <p
           class={`

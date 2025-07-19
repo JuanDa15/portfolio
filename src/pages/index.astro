@@ -1,3 +1,6 @@
 ---
-Astro.redirect(new URL('/en', Astro.site).pathname);
+import { getUrlWithBase } from '../utils/url';
+
+const url = getUrlWithBase('/en');
+Astro.redirect(url);
 ---

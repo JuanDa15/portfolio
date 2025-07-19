@@ -1,3 +1,4 @@
+import { getUrlWithBase } from "@/utils/url";
 import { DEFAULT_LANG, type Lang } from ".";
 import { routes, showDefaultLang, ui } from "./ui"
 
@@ -25,8 +26,8 @@ export function useTranslatedPath(lang: Lang) {
       : path.replace('/', '');
 
     return !showDefaultLang && l === DEFAULT_LANG
-      ? `/portfolio/${l}/${tp}`
-      : `/portfolio/${l}/${tp}`
+      ? getUrlWithBase(`/${l}/${tp}`)
+      : getUrlWithBase(`/${l}/${tp}`)
   }
 }
 

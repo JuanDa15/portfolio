@@ -1,9 +1,12 @@
 ---
+import { getUrlWithBase } from '@/utils/url';
+
 const { class: className } = Astro.props;
+const url = getUrlWithBase('/img.jpg');
 ---
 
 <img
-  src={`/portfolio/img.jpg`}
+  src={url}
   alt='juan_david_pic'
   class={`
     rounded-full 
