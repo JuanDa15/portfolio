@@ -3,9 +3,9 @@ import {
   getLangFromUrl,
   useTranslatedPath,
   useTranslations,
-} from '../i18n/utils';
-import LanguagePicker from './LanguagePicker.astro';
-import ThemePicker from './ThemePicker.astro';
+} from '../../i18n/utils';
+import LanguagePicker from '../LanguagePicker.astro';
+import ThemePicker from '../ThemePicker.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -17,14 +17,14 @@ const links = [
     link: tp('/', lang),
     text: t('nav.home'),
   },
-  {
-    link: tp('/about', lang),
-    text: t('nav.about'),
-  },
-  {
-    link: tp('/projects', lang),
-    text: t('nav.projects'),
-  },
+  // {
+  //   link: tp('/about', lang),
+  //   text: t('nav.about'),
+  // },
+  // {
+  //   link: tp('/projects', lang),
+  //   text: t('nav.projects'),
+  // },
 ];
 ---
 

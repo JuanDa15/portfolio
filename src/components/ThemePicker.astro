@@ -12,6 +12,7 @@ import SunIcon from '@/icons/SunIcon.astro';
     data-theme-btn
     class='p-1 rounded-full text-slate-800 dark:text-lavender transition-colors hover:bg-gray-400 dark:hover:bg-slate-800'
     data-theme='system'
+    data-active='false'
   >
     <ComputerIcon class='size-4 md:size-5' />
   </button>
@@ -19,6 +20,7 @@ import SunIcon from '@/icons/SunIcon.astro';
     data-theme-btn
     class='p-1 rounded-full text-slate-800 dark:text-lavender transition-colors hover:bg-gray-400 dark:hover:bg-slate-800'
     data-theme='light'
+    data-active='false'
   >
     <SunIcon class='size-4 md:size-5' />
   </button>
@@ -26,14 +28,24 @@ import SunIcon from '@/icons/SunIcon.astro';
     data-theme-btn
     class='p-1 rounded-full text-slate-800 dark:text-lavender transition-colors hover:bg-gray-400 dark:hover:bg-slate-800'
     data-theme='dark'
+    data-active='false'
   >
     <MoonIcon class='size-4 md:size-5' />
   </button>
 </div>
 
+<style>
+  [data-active='true'] {
+    background-color: #9b30ff;
+    color: white;
+  }
+</style>
+
 <script>
-  import { getSystemTheme } from '@/utils/system-theme';
   import { $, $$ } from '@/utils/helpers';
+  import { getSystemTheme } from '@/utils/system-theme';
+
+  const handlerMap = new WeakMap<HTMLElement, EventListener>();
 
   function clickHandler(ele: HTMLElement | Element) {
     return () => {
@@ -54,18 +66,12 @@ import SunIcon from '@/icons/SunIcon.astro';
   }
 
   function updateRender(theme: string, btn: HTMLElement | Element) {
-    const activeClasses = ['bg-electric-purple', 'text-white'];
-
-    $$('[data-theme-btn]').forEach((button) => {
-      activeClasses.forEach((className) => {
-        button.classList.contains(className) &&
-          button.classList.remove(className);
-      });
+    $$('[data-theme-btn]').forEach((btn) => {
+      btn.setAttribute('data-active', 'false');
     });
-    btn.classList.add(...activeClasses);
+    btn.setAttribute('data-active', 'true');
 
     const html = $('html') as HTMLElement;
-
     html?.setAttribute('class', getThemeToApply(theme));
     html.style.scrollbarColor =
       getThemeToApply(theme) === 'dark' ? '#9b30ff #000000' : '#9b30ff #e5e7eb';
@@ -73,17 +79,20 @@ import SunIcon from '@/icons/SunIcon.astro';
 
   document.addEventListener('astro:page-load', () => {
     init();
-
     $$('[data-theme-btn]').forEach((btn) => {
       const ele = btn as HTMLButtonElement;
-      ele.addEventListener('click', clickHandler(ele));
+      const handler = clickHandler(ele);
+      handlerMap.set(ele, handler);
+      ele.addEventListener('click', handler);
     });
   });
 
   document.addEventListener('astro:before-swap', () => {
     $$('[data-theme-btn]').forEach((btn) => {
       const ele = btn as HTMLButtonElement;
-      ele.removeEventListener('click', clickHandler(ele));
+      const handler = handlerMap.get(ele);
+      if (!handler) return;
+      ele.removeEventListener('click', handler);
     });
   });
 </script>
