@@ -1,9 +1,10 @@
-name: Deploy astro to GH pages
+name: Deploy to GH pages
 
 on: 
   push:
     branches:
-      - main
+      - pdn
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -18,11 +19,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Install, build, and upload your site
         uses: withastro/action@v3
-        # with:
+        with:
+          node-version: 20
+          package-manager: pnpm@latest
           # path: . # The root location of your Astro project inside the repository. (optional)
-          # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
-          # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
-
+  # if i add another job here i have to add another jobs like:
+    # upload the artifact, in this case no because i use the action withastro/action@v3 and it does it for me cause i have the build step and next the deploy if i add another job here i have to add the upload artifact step
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -30,6 +32,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
