@@ -4,6 +4,10 @@ interface Props {
 }
 
 const { text } = Astro.props as Props;
+// Tolerance is used to account for the variable width of characters
+// in the typewriter effect, ensuring the animation completes smoothly.
+const tolerance = 1;
+const length = text.replaceAll(' ', '').length - tolerance;
 ---
 
 <h1
