@@ -1,0 +1,56 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props as Props;
+const tolerance = 1;
+const length = text.replaceAll(' ', '').length - tolerance;
+---
+
+<h1
+  class={`
+    text-2xl md:text-4xl lg:text-5xl font-bold 
+    inline-flex items-center gap-x-4 md:gap-x-6 
+    mb-8 md:mb-10
+    text-slate-800 dark:text-lavender typewriter
+    py-1
+    `}
+  style={`--typewriter-steps: ${length}; --typewriter-width: ${length}ch;`}
+>
+  <p class='m-0 p-0 inline'>{text}</p>
+</h1>
+
+<style>
+  .typewriter {
+    overflow: hidden;
+    border-right: 0.15em solid;
+    border-right-color: #9b30ff !important;
+    white-space: nowrap;
+    width: 0;
+    max-width: var(--typewriter-width) !important;
+    animation:
+      typing 3s steps(var(--typewriter-steps), end),
+      blink-caret 0.75s step-end infinite;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: var(--typewriter-width);
+    }
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: currentColor;
+    }
+  }
+</style>
