@@ -7,6 +7,7 @@ const { text } = Astro.props as Props;
 // Tolerance is used to account for the variable width of characters
 // in the typewriter effect, ensuring the animation completes smoothly.
 const tolerance = 1;
+// Calculate the length of the text, excluding spaces, minus the tolerance
 const length = text.replaceAll(' ', '').length - tolerance;
 ---
 
@@ -20,7 +21,7 @@ const length = text.replaceAll(' ', '').length - tolerance;
     `}
   style={`--typewriter-steps: ${length}; --typewriter-width: ${length}ch;`}
 >
-  <p class='m-0 p-0 inline'>{text}</p>
+  <span class='m-0 p-0 inline'>{text}</span>
 </h1>
 
 <style>
